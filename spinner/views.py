@@ -1,12 +1,13 @@
+from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import render
 
 import requests
 
 def show_containers(req):
-    r = requests.get('http://ec2-54-237-81-117.compute-1.amazonaws.com/containers')
+    r = requests.get('http://%s/containers' % settings.SPIN_DOCKER_HOST)
     return HttpResponse(r)
 
 def create_container(req):
-    r = requests.post('http://ec2-54-237-81-117.compute-1.amazonaws.com/containers')
+    r = requests.post('http://%s/containers' % settings.SPIN_DOCKER_HOST)
     return HttpResponse(r)

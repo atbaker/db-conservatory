@@ -101,3 +101,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+# DBC-specific
+SPIN_DOCKER_HOST = os.environ['SPIN_DOCKER_HOST']
