@@ -6,6 +6,9 @@ from django.shortcuts import render
 import pdb
 import requests
 
+data = {}
+data['PRODUCTION'] = settings.PRODUCTION
+
 def home(req):
     data = {}
     response = requests.get('http://%s/containers' % settings.SPIN_DOCKER_HOST)
