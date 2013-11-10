@@ -3,6 +3,9 @@
 
 *.py[cod]
 
+# Django
+staticfiles
+
 # C extensions
 *.so
 
