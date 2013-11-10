@@ -1,1 +1,1 @@
-web: gunicorn db_conservatory.wsgi
+web: gunicorn --pythonpath="$PWD/db_conservatory" config.wsgi

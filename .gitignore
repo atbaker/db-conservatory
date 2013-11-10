@@ -1,3 +1,6 @@
+# ATB-specific
+.env
+
 *.py[cod]
 
 # C extensions
