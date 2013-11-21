@@ -79,27 +79,9 @@
 
     <div class="container">
 
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Databases - for free!</h1>
-        <p>There are <strong>{{ running_containers|length }}</strong> containers running:</p>
-        {# {{ running_containers }} #}
-        <ul>
-          {% for container, attributes in running_containers.items %}
-            <li>
-              <strong>{{ container }}</strong>
-              <ul>
-                {% for key, value in attributes.items %}
-                  <li>{{ key }}: {{ value }}</li>
-                {% endfor %}
-              </ul>
-            </li>
-          {% endfor %}
-        </ul>
-        <p>
-          <a class="btn btn-lg btn-primary" href="{% url 'create' %}" role="button">Create a new container &raquo;</a>
-        </p>
-      </div>
+      {% block content %}
+
+      {% endblock %}
 
     </div> <!-- /container -->
 
