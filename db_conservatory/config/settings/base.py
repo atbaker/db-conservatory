@@ -34,6 +34,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'south',
     'spinner',
 )
 
@@ -71,6 +72,8 @@ STATICFILES_DIRS = (
 TEMPLATE_DIRS = (
         os.path.join(BASE_DIR, 'templates'),
 )
+
+SESSION_SAVE_EVERY_REQUEST = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
