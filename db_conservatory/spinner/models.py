@@ -39,7 +39,7 @@ class Container(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
-        return self.container_id
+        return "%s %s (%s)" % (self.name.capitalize(), self.container_id, self.database)
 
     def get_absolute_url(self):
         return reverse('container', kwargs={'container_id': self.container_id})

@@ -1,6 +1,8 @@
 from django.test import TestCase
 from django.test.client import Client
-from .models import Database
+from .models import Database, Container
+
+import pdb
 
 class DatabaseTestCase(TestCase):
     def setUp(self):
@@ -13,6 +15,11 @@ class DatabaseTestCase(TestCase):
             ports='3306,22')
         return db
 
+    def _create_database_and_container(self, session_key='test'):
+        db = self._create_database()
+        container = db.create_container(session_key)
+        return container
+
     def test_database_attributes(self):
         self._create_database()
 
@@ -21,18 +28,28 @@ class DatabaseTestCase(TestCase):
         self.assertEqual(db.ports, '3306,22')
 
     def test_create_container(self):
-        db = self._create_database()
+        container = self._create_database_and_container()
 
-        container = db.create_container()
-        self.assertIsInstance(container, dict)
-        self.assertIn('id', container.keys())
-        self.assertIn('ssh_port', container.keys())
-        self.assertIn('db_port', container.keys())
+        self.assertIsInstance(container, Container)
 
     def test_create_container_request(self):
-        self._create_database()
+        db = self._create_database()
+
+        self.c.get('/')
 
         resp = self.c.get('/databases/mysql/create', follow=True)
         self.assertEqual(resp.status_code, 200)
 
-        self.assertIn("Your container", resp.content)
+        self.assertIn("Your new %s database is ready!" % db, resp.content)
+
+    def test_view_my_containers(self):
+        self.c.get('/')
+        container = self._create_database_and_container(self.c.session.session_key)
+
+        resp = self.c.get('/databases/my-databases')
+
+        self.assertEqual(resp.status_code, 200)
+        self.assertIn(str(container), resp.content)
+
+    def test_view_stopped_container(self):
+        
