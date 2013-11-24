@@ -8,6 +8,7 @@ import requests
 class Database(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField()
+    description = models.TextField(blank=True)
     image = models.CharField(max_length=255)
     ports = models.CommaSeparatedIntegerField(max_length=50)
 
@@ -25,6 +26,9 @@ class Database(models.Model):
             )
         container.save()
         return container
+
+    def get_create_url(self):
+        return reverse('create', kwargs={'database': self.slug})
 
 class Container(models.Model):
     container_id = models.CharField(primary_key=True, unique=True, max_length=100)

@@ -1,28 +1,27 @@
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView, ListView
 
 from .models import Database, Container
+from .utilities import get_all_containers
 
 import pdb
-import requests
-
-data = {}
-data['PRODUCTION'] = settings.PRODUCTION
-
-def home(req):
-    data = {}
-    response = requests.get('http://%s/containers' % settings.SPIN_DOCKER_HOST)
-    data['running_containers'] = response.json()['containers']
-    return render(req, 'index.html', data)
 
 def create_container(request, database):
     request.session.modified = True
     db = get_object_or_404(Database, slug=database)
     container = db.create_container(session_key=request.session.session_key) # use DB soon
     return HttpResponseRedirect(container.get_absolute_url())
+
+class DatabaseListView(ListView):
+    model = Database
+
+    def get_context_data(self, **kwargs):
+        context = super(DatabaseListView, self).get_context_data(**kwargs)
+        context['all_containers'] = len(get_all_containers())
+        return context    
 
 class ContainerDetailView(DetailView):
     model = Container
