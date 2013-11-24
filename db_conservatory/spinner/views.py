@@ -35,7 +35,6 @@ class ContainerDetailView(DetailView):
 
 class ContainerListView(ListView):
     model = Container
-    template_name = 'spinner/container_list.html'
 
     def get_queryset(self):
         queryset = super(ContainerListView, self).get_queryset()
