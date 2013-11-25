@@ -21,9 +21,8 @@ class DatabaseTestCase(TestCase):
         return container
 
     def test_database_attributes(self):
-        self._create_database()
+        db = self._create_database()
 
-        db = Database.objects.get(name='MySQL')
         self.assertEqual(db.image, 'mysqltoday')
         self.assertEqual(db.ports, '3306,22')
 
@@ -50,6 +49,3 @@ class DatabaseTestCase(TestCase):
 
         self.assertEqual(resp.status_code, 200)
         self.assertIn(str(container), resp.content)
-
-    def test_view_stopped_container(self):
-        

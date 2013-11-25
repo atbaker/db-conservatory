@@ -16,7 +16,8 @@ class Database(models.Model):
         return self.name
 
     def create_container(self, session_key):
-        r = requests.post('http://%s/containers' % settings.SPIN_DOCKER_HOST)
+        r = requests.post('http://%s/containers' % settings.SPIN_DOCKER_HOST,
+            data={'image': self.image, 'port': eval(self.ports)})
         container_info = r.json()['container']
         container = Container(container_id=container_info['id'],
             name=container_info['name'].replace('_', ' ')[1:],
