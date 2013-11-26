@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Your databases</h1>
+You have <strong>{{ container_list|length }} databases.
+
+<h2>Running databases</h2>
+<ul>
+{% for container in container_list %}
+  {% if container.1 %}
+    <li><a href="{{ container.0.get_absolute_url }}">{{ container.0 }}</a></li>
+  {% endif %}
+{% empty %}
+  <li>You have no runnning databases.</li>
+{% endfor %}
+</ul>
+
+
+<h2>Stopped databases</h2>
+<ul>
+{% for container in container_list %}
+  {% if not container.1 %}
+    <li><a href="{{ container.0.get_absolute_url }}">{{ container.0 }}</a></li>
+  {% endif %}
+{% empty %}
+  <li>You have no stopped databases.</li>
+{% endfor %}
+</ul>
+
+{% endblock %}      

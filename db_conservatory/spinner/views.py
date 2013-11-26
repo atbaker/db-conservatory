@@ -43,10 +43,10 @@ class ContainerListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(ContainerListView, self).get_context_data(**kwargs)
         object_list = []
-        for container in context['object_list']:
+        for container in context['container_list']:
             if container.is_running():
                 object_list.append((container, True))
             else:
                 object_list.append((container, False))
-        context['object_list'] = object_list
+        context['container_list'] = object_list
         return context
