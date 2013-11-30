@@ -2,6 +2,7 @@ from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
 
+from urlparse import urljoin
 
 import requests
 
@@ -16,9 +17,9 @@ class Database(models.Model):
         return self.name
 
     def create_container(self, session_key):
-        r = requests.post('http://%s/containers' % settings.SPIN_DOCKER_HOST,
+        r = requests.post(urljoin(settings.SPIN_DOCKER_ENDPOINT, 'containers'),
             data={'image': self.image, 'port': eval(self.ports)})
-        container_info = r.json()['container']
+        container_info = r.json()
         container = Container(container_id=container_info['id'],
             name=container_info['name'].replace('_', ' ')[1:],
             uri=container_info['uri'],
@@ -46,9 +47,9 @@ class Container(models.Model):
         return reverse('container', kwargs={'container_id': self.container_id})
 
     def get_spin_docker_info(self):
-        r = requests.get('http://%s%s' % (settings.SPIN_DOCKER_HOST, self.uri))
+        r = requests.get(urljoin(settings.SPIN_DOCKER_ENDPOINT, self.uri))
         spin_docker_info = r.json()
         return spin_docker_info
 
     def is_running(self):
-        return self.get_spin_docker_info()['container']['status'] == 'running'
+        return self.get_spin_docker_info()['status'] == 'running'

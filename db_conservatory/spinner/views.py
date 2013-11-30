@@ -29,7 +29,7 @@ class ContainerDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(ContainerDetailView, self).get_context_data(**kwargs)
-        context['current_info'] = self.object.get_spin_docker_info()['container']
+        context['current_info'] = self.object.get_spin_docker_info()
         return context
 
 class ContainerListView(ListView):
