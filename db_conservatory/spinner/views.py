@@ -1,11 +1,10 @@
-from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView, ListView
 
 from .models import Database, Container
-from .utilities import get_all_containers
+from .utils import get
 
 import pdb
 
@@ -20,7 +19,7 @@ class DatabaseListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(DatabaseListView, self).get_context_data(**kwargs)
-        context['all_containers'] = len(get_all_containers())
+        context['all_containers'] = len(get('containers'))
         return context    
 
 class ContainerDetailView(DetailView):

@@ -49,3 +49,6 @@ class DatabaseTestCase(TestCase):
 
         self.assertEqual(resp.status_code, 200)
         self.assertIn(str(container), resp.content)
+
+    def test_get_util(self):
+        container = self._create_database_and_container()

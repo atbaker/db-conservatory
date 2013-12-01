@@ -88,6 +88,41 @@ USE_L10N = True
 
 USE_TZ = True
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'null': {
+            'level': 'DEBUG',
+            'class': 'django.utils.log.NullHandler',
+        },
+        'console':{
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['null'],
+            'propagate': True,
+            'level': 'DEBUG',
+        },
+        'spinner': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+    }
+}
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
@@ -99,5 +134,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
 
-# DBC-specific
+# spin-docker
 SPIN_DOCKER_ENDPOINT = os.environ['SPIN_DOCKER_ENDPOINT']
+SPIN_DOCKER_USERNAME = os.environ['SPIN_DOCKER_USERNAME']
+SPIN_DOCKER_PASSWORD = os.environ['SPIN_DOCKER_PASSWORD']
