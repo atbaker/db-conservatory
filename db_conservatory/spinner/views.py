@@ -17,6 +17,11 @@ def create_container(request, database):
 class DatabaseListView(ListView):
     model = Database
 
+    def get_queryset(self):
+        queryset = super(DatabaseListView, self).get_queryset()
+        queryset = queryset.filter(active=True)
+        return queryset
+
     def get_context_data(self, **kwargs):
         context = super(DatabaseListView, self).get_context_data(**kwargs)
         context['all_containers'] = len(get('containers'))
@@ -36,7 +41,7 @@ class ContainerListView(ListView):
 
     def get_queryset(self):
         queryset = super(ContainerListView, self).get_queryset()
-        queryset = queryset.filter(session_key=self.request.session.session_key)
+        queryset = queryset.filter(active=True, session_key=self.request.session.session_key)
         return queryset
 
     def get_context_data(self, **kwargs):

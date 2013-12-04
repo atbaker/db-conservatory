@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.test.client import Client
 from .models import Database, Container
 from .utils import get, post
-from requests.exceptions import RequestException
+from django.core.management import call_command
 
 import responses
 
@@ -90,7 +90,7 @@ class DatabaseTestCase(TestCase):
         self.assertIn(str(container), resp.content)
 
     def test_bad_request_return_none(self):
-        self.assertEqual(get('continers'), None)
+        self.assertEqual(get('badresource'), None)
 
     @responses.activate
     def test_bad_json_return_none(self):
@@ -100,4 +100,32 @@ class DatabaseTestCase(TestCase):
                 "status": "running", "uri": "/v1/containers/ef458b3613b3", \
                 "username": ""}',)        
         
-        self.assertEqual(get('containers'), None)
+        self.assertEqual(get('containers'), None)  
+
+    @responses.activate
+    def test_database_audit_missing_image(self):
+        database = self._create_database()
+
+        responses.add(responses.GET, 'http://localhost:5000/v1/images',
+            body=u'[]')
+        responses.add(responses.GET, 'http://localhost:5000/v1/containers',
+            body=u'[]')
+        call_command('spin_docker_audit')
+
+        database = Database.objects.get(pk=database.id)
+
+        self.assertFalse(database.active)
+
+    @responses.activate
+    def test_container_audit_missing_container(self):
+        container = self._create_database_and_container()
+
+        responses.add(responses.GET, 'http://localhost:5000/v1/images',
+            body=u'[]')
+        responses.add(responses.GET, 'http://localhost:5000/v1/containers',
+            body=u'[]')        
+        call_command('spin_docker_audit')
+
+        container = Container.objects.get(pk=container.container_id)
+
+        self.assertFalse(container.active)

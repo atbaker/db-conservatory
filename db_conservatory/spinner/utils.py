@@ -40,10 +40,3 @@ def get(resource):
 
 def post(resource, data):
     return make_request('POST', resource, data)
-
-# r = requests.post(urljoin(settings.SPIN_DOCKER_ENDPOINT, 'containers'),
-#     auth=(settings.SPIN_DOCKER_USERNAME, settings.SPIN_DOCKER_PASSWORD),
-#     data={'image': self.image, 'port': eval(self.ports)})
-
-# r = requests.get(urljoin(settings.SPIN_DOCKER_ENDPOINT, self.uri),
-#     auth=(settings.SPIN_DOCKER_USERNAME, settings.SPIN_DOCKER_PASSWORD))

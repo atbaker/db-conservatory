@@ -9,6 +9,7 @@ class Database(models.Model):
     description = models.TextField(blank=True)
     image = models.CharField(max_length=255)
     ports = models.CommaSeparatedIntegerField(max_length=50)
+    active = models.BooleanField(default=True)
 
     def __unicode__(self):
         return self.name
@@ -34,6 +35,7 @@ class Container(models.Model):
     uri = models.URLField(max_length=200)
     database = models.ForeignKey(Database)
     session_key = models.CharField(max_length=100)
+    active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
