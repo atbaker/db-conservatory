@@ -89,7 +89,11 @@ class DatabaseTestCase(TestCase):
         self.assertEqual(resp.status_code, 200)
         self.assertIn(str(container), resp.content)
 
+    @responses.activate
     def test_bad_request_return_none(self):
+        responses.add(responses.GET, 'http://localhost:5000/v1/badresource',
+            status=404)
+
         self.assertEqual(get('badresource'), None)
 
     @responses.activate
