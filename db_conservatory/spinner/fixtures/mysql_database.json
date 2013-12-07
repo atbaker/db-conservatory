@@ -3,10 +3,12 @@
   "pk": 1, 
   "model": "spinner.database", 
   "fields": {
-    "ports": "22,3306", 
+    "description": "The world's most popular relational database", 
     "image": "mysqltoday", 
-    "name": "MySQL", 
-    "slug": "mysql"
+    "slug": "mysql", 
+    "active": true, 
+    "ports": "22,3306", 
+    "name": "MySQL"
   }
 }
 ]
