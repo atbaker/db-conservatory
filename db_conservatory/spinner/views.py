@@ -9,9 +9,12 @@ from .utils import get
 import pdb
 
 def create_container(request, database):
-    request.session.modified = True
-    db = get_object_or_404(Database, slug=database)
-    container = db.create_container(session_key=request.session.session_key) # use DB soon
+    db = get_object_or_404(Database, slug=database)    
+    if request.user.is_authenticated():
+        container = db.create_container(user=request.user)
+    else:
+        container = db.create_container(session_key=request.session.session_key)
+        request.session.modified = True
     return HttpResponseRedirect(container.get_absolute_url())
 
 class DatabaseList(ListView):
@@ -41,7 +44,7 @@ class ContainerList(ListView):
 
     def get_queryset(self):
         queryset = super(ContainerList, self).get_queryset()
-        queryset = queryset.filter(active=True, session_key=self.request.session.session_key)
+        queryset = queryset.filter(active=True, user=self.request.user)
         return queryset
 
     def get_context_data(self, **kwargs):

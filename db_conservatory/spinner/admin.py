@@ -7,5 +7,5 @@ class DatabaseAdmin(admin.ModelAdmin):
 admin.site.register(Database, DatabaseAdmin)
 
 class ContainerAdmin(admin.ModelAdmin):
-    list_display = ('container_id', 'name', 'database', 'created')
+    list_display = ('container_id', 'name', 'database', 'user', 'created')
 admin.site.register(Container, ContainerAdmin)

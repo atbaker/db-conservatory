@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.db import models
 
@@ -14,7 +15,7 @@ class Database(models.Model):
     def __unicode__(self):
         return self.name
 
-    def create_container(self, session_key):
+    def create_container(self, session_key=None, user=None):
         data = {'image': self.image, 'port': eval(self.ports)}
         container_info = post('containers', data)
         container = Container(container_id=container_info['id'],
@@ -22,6 +23,7 @@ class Database(models.Model):
             uri=container_info['uri'],
             database=self,
             session_key=session_key,
+            user=user,
             )
         container.save()
         return container
@@ -34,7 +36,8 @@ class Container(models.Model):
     name = models.CharField(max_length=50)
     uri = models.URLField(max_length=200)
     database = models.ForeignKey(Database)
-    session_key = models.CharField(max_length=100)
+    session_key = models.CharField(max_length=100, null=True)
+    user = models.ForeignKey(User, null=True)
     active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
 
