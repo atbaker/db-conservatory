@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.test import TestCase
 from django.test.client import Client
 from .models import Database, Container
@@ -12,6 +13,17 @@ class DatabaseTestCase(TestCase):
     def setUp(self):
         self.c = Client()
 
+    def _create_and_login_user(self):
+        data = {'first_name': 'Cornelius',
+            'last_name': 'Maximus',
+            'email': 'cornelius@spqr.com',
+            'password1': 'rome',
+            'password2': 'rome'}
+        self.c.post('/register', data)
+        self.c.login(username=data['email'], password=data['password1'])
+
+        return data['email']
+
     def _create_database(self):
         db = Database.objects.create(name='MySQL',
             slug='mysql',
@@ -19,16 +31,22 @@ class DatabaseTestCase(TestCase):
             ports='3306,22')
         return db
 
-    def _create_database_and_container(self, session_key='test'):
+    def _create_database_and_container(self, session_key=None, user=None):
         responses.add(responses.POST, 'http://localhost:5000/v1/containers',
             body=u'{"db_port": "49154", "id": "ef458b3613b3", \
                 "name": "/teal_lizard", "ssh_port": "49153", \
-                "status": "running", "uri": "/v1/containers/ef458b3613b3", \
-                "username": ""}',
+                "status": "running", "uri": "/v1/containers/ef458b3613b3"}',
             status=201)
 
         db = self._create_database()
-        container = db.create_container(session_key)
+
+        if user:
+            user = User.objects.get(username=user)        
+
+        if session_key == None and user == None:
+            session_key = 'test'
+
+        container = db.create_container(session_key=session_key, user=user)
         return container
 
     def test_database_attributes(self):
@@ -51,15 +69,13 @@ class DatabaseTestCase(TestCase):
         responses.add(responses.POST, 'http://localhost:5000/v1/containers',
             body=u'{"db_port": "49154", "id": "ef458b3613b3", \
                 "name": "/teal_lizard", "ssh_port": "49153", \
-                "status": "running", "uri": "/v1/containers/ef458b3613b3", \
-                "username": ""}',
+                "status": "running", "uri": "/v1/containers/ef458b3613b3"}',
             status=201)        
 
         responses.add(responses.GET, 'http://localhost:5000/v1/containers/ef458b3613b3',
             body=u'{"db_port": "49154", "id": "ef458b3613b3", \
                 "name": "/teal_lizard", "ssh_port": "49153", \
-                "status": "running", "uri": "/v1/containers/ef458b3613b3", \
-                "username": ""}',)               
+                "status": "running", "uri": "/v1/containers/ef458b3613b3"}',)               
 
         db = self._create_database()
 
@@ -78,11 +94,11 @@ class DatabaseTestCase(TestCase):
         responses.add(responses.GET, 'http://localhost:5000/v1/containers/ef458b3613b3',
             body=u'{"db_port": "49154", "id": "ef458b3613b3", \
                 "name": "/teal_lizard", "ssh_port": "49153", \
-                "status": "running", "uri": "/v1/containers/ef458b3613b3", \
-                "username": ""}',)
+                "status": "running", "uri": "/v1/containers/ef458b3613b3"}',)
 
-        self.c.get('/')
-        container = self._create_database_and_container(self.c.session.session_key)
+        user = self._create_and_login_user()
+
+        container = self._create_database_and_container(user=user)
 
         resp = self.c.get('/databases/my-databases')
 
@@ -101,8 +117,7 @@ class DatabaseTestCase(TestCase):
         responses.add(responses.GET, 'http://localhost:5000/v1/containers',
             body=u'"db_port": "49154", "id": "ef458b3613b3", \
                 "name": "/teal_lizard", "ssh_port": "49153", \
-                "status": "running", "uri": "/v1/containers/ef458b3613b3", \
-                "username": ""}',)        
+                "status": "running", "uri": "/v1/containers/ef458b3613b3"}',)        
         
         self.assertEqual(get('containers'), None)  
 
