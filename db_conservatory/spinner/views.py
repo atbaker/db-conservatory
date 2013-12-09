@@ -3,10 +3,10 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView, ListView
 
+from braces.views import LoginRequiredMixin
+
 from .models import Database, Container
 from .utils import get
-
-import pdb
 
 def create_container(request, database):
     db = get_object_or_404(Database, slug=database)    
@@ -39,7 +39,7 @@ class ContainerDetail(DetailView):
         context['current_info'] = self.object.get_spin_docker_info()
         return context
 
-class ContainerList(ListView):
+class ContainerList(LoginRequiredMixin, ListView):
     model = Container
 
     def get_queryset(self):

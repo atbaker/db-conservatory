@@ -71,8 +71,14 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Link1</a></li>
-            <li class="active"><a href="../navbar-static-top/">Link2</a></li>
+            {% if user.is_authenticated %}
+              <li><p class="navbar-text">Hi, {{ user.first_name }}</p></li>
+              <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+              <li><a href="{% url 'register' %}">Register</a></li>
+              <li><a href="{% url 'login' %}">Login</a></li>              
+            {% endif %}
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>

@@ -135,6 +135,11 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
 
+# Registration
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_URL = 'logout'
+
 # spin-docker
 SPIN_DOCKER_ENDPOINT = os.environ['SPIN_DOCKER_ENDPOINT']
 SPIN_DOCKER_USERNAME = os.environ['SPIN_DOCKER_USERNAME']
