@@ -62,7 +62,7 @@ class DatabaseTestCase(TestCase):
         self.assertIsInstance(container, Container)
 
     @responses.activate
-    def test_create_container_request(self):
+    def test_create_container_anonymous(self):
         responses.add(responses.GET, 'http://localhost:5000/v1/containers',
             body=u'[]')
 
@@ -83,8 +83,41 @@ class DatabaseTestCase(TestCase):
 
         resp = self.c.get('/databases/mysql/create', follow=True)
         self.assertEqual(resp.status_code, 200)
-
         self.assertIn("Your new %s database is ready!" % db, resp.content)
+
+        new_container = Container.objects.all()[0]
+        self.assertEqual(new_container.session_key, self.c.session.session_key)
+        self.assertIsNone(new_container.user)
+
+    @responses.activate
+    def test_create_container_as_user(self):
+        responses.add(responses.GET, 'http://localhost:5000/v1/containers',
+            body=u'[]')
+
+        responses.add(responses.POST, 'http://localhost:5000/v1/containers',
+            body=u'{"db_port": "49154", "id": "ef458b3613b3", \
+                "name": "/teal_lizard", "ssh_port": "49153", \
+                "status": "running", "uri": "/v1/containers/ef458b3613b3"}',
+            status=201)        
+
+        responses.add(responses.GET, 'http://localhost:5000/v1/containers/ef458b3613b3',
+            body=u'{"db_port": "49154", "id": "ef458b3613b3", \
+                "name": "/teal_lizard", "ssh_port": "49153", \
+                "status": "running", "uri": "/v1/containers/ef458b3613b3"}',)               
+
+        db = self._create_database()
+
+        self.c.get('/')
+
+        user = self._create_and_login_user()
+
+        resp = self.c.get('/databases/mysql/create', follow=True)
+        self.assertEqual(resp.status_code, 200)
+        self.assertIn("Your new %s database is ready!" % db, resp.content)        
+
+        new_container = Container.objects.all()[0]
+        self.assertEqual(new_container.user.username, user)
+        self.assertIsNone(new_container.session_key)
 
     @responses.activate
     def test_view_my_containers(self):
