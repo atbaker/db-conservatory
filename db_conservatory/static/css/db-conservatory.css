@@ -1,4 +1,6 @@
-body {
-    min-height: 2000px;
-    padding-top: 70px;
+#jumbo {
+    background-image:url('../img/lauren.jpg');
+    background-size: cover;
+    background-repeat:no-repeat;
+    color: rgb(255, 255, 255);
 }

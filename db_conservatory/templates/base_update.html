@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="{{ STATIC_URL }}ico/favicon.png">
+        <title>DB Conservatory</title>
+        <!-- Bootstrap Core CSS -->
+        <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">
+        <!-- Font Awesome  -->    
+        <link href="{{ STATIC_URL }}css/font-awesome.min.css" rel="stylesheet">
+        <!-- Custom Stylesheet For This Template -->
+        <link href="{{ STATIC_URL }}css/stylesheet.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/skins.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/db-conservatory.css" rel="stylesheet">
+        <!-- Google Fonts -->    
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic|Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="assets/js/html5shiv.js"></script>
+        <script src="assets/js/respond.min.js"></script>
+        <![endif]-->
+        <!-- Google Analytics -->
+        {% if PRODUCTION %}
+          <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-45617138-1', 'dbconservatory.com');
+            ga('send', 'pageview');
+          </script>
+        {% endif %}        
+    </head>
+    <body>
+        <div id="utter-wrapper" class="color-skin-1">
+            <header id="header" class="header" data-spy="affix" data-offset-top="10">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="{% url 'home' %}">DB<span>Conservatory</span></a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse navbar-ex1-collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="{% url 'home' %}">Home</a>
+                                <li><a href="{% url 'container_list' %}">My databases</a></li>
+                                {% if user.is_authenticated %}
+                                  <li><a href="#">Hi, {{ user.first_name }}</a></li>
+                                  <li><a href="{% url 'logout' %}">Logout</a></li>
+                                {% else %}
+                                  <li><a href="{% url 'register' %}">Register</a></li>
+                                  <li><a href="{% url 'login' %}">Login</a></li>              
+                                {% endif %}                                
+                            </ul>
+                            <!-- /.nav -->
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container -->
+                </nav>
+                <!-- /.navbar -->
+            </header>
+            <!-- /#header -->
+            
+            <div class="main-wrapper">
+                {% block content %}{% endblock %}
+            </div>
+
+            <footer id="footer-2" class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 footer-info-wrapper">
+                            <span>DB Conservatory © 2014. All Rights Reserved.</span>                        
+                        </div>
+                        <!-- /.footer-info-wrapper -->
+                        <div class="col-xs-12 col-sm-6 footer-links-wrapper">
+                            <ul class="list-inline">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms Of Service</a></li>
+                                <li><a href="#">Disclaimer</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.footer-links-wrapper -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+            </footer>
+            <!-- /#footer-2 -->
+        </div>
+        <!-- /#utter-wrapper -->
+        <!-- Bootstrap JS & Others JavaScript Plugins
+            ================================================== -->
+        <!-- Placed At The End Of The Document So Page Loads Faster -->
+        <script src="{{ STATIC_URL }}js/jquery-2.0.3.min.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+        <!-- <script src="assets/isotope-site/jquery.isotope.min.js"></script> -->
+    </body>
+</html>

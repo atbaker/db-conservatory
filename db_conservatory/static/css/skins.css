@@ -1,0 +1,396 @@
+/* Color Skin 1
+ * -------------------------- */
+.color-skin-1 a:hover, .color-skin-1 a:focus, .color-skin-1 #header .navbar-brand span, .color-skin-1 #page-title-wrapper .breadcrumb a:hover, .color-skin-1 #page-title-wrapper .breadcrumb a:focus, .color-skin-1 .nav-tabs > li.active > a, .color-skin-1 .nav-tabs > li.active > a:hover, .color-skin-1 .nav-tabs > li.active > a:focus, .color-skin-1 .flat-color:hover, .color-skin-1 .flat-color.btn-bordered, .color-skin-1 #footer-2 a:hover, .color-skin-1 .footer-brand span, .color-skin-1 .service .service-icon {
+    color: #2ecc71;
+}
+
+.color-skin-1 #header .navbar-toggle:hover, .color-skin-1 #header .navbar-toggle:focus, .color-skin-1 .tp-leftarrow:hover, .color-skin-1 .tp-rightarrow:hover, .color-skin-1 .flat-color, .color-skin-1 .flat-color.btn-bordered:hover, .color-skin-1 .controls .prev, .color-skin-1 .controls .next, .color-skin-1 .portfolio-item .portfolio-thumb .image-overlay, .color-skin-1 .portfolio-item .portfolio-thumb .portfolio-zoom:hover, .color-skin-1 .portfolio-item .portfolio-thumb .portfolio-link:hover, .color-skin-1 #toTopHover, .color-skin-1 .portfolio-filter.nav-pills > li.active > a, .color-skin-1 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-1 .portfolio-filter.nav-pills > li.active > a:focus, .color-skin-1 .pricing .price, .color-skin-1 .error404, .color-skin-1 .the-icons a:hover {
+    background-color: #2ecc71;
+}
+
+.color-skin-1 #header .navbar-toggle:hover, .color-skin-1 #header .navbar-toggle:focus, .color-skin-1 .flat-color, .color-skin-1 .flat-color:hover, .color-skin-1 .flat-color:active, .color-skin-1 .portfolio-filter.nav-pills > li.active > a, .color-skin-1 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-1 .portfolio-filter.nav-pills > li.active > a:focus {
+    border-color: #2ecc71;
+}
+
+@media (min-width: 768px) {
+    .color-skin-1 #header .navbar-nav > li > a:hover, .color-skin-1 #header .navbar-nav > li > a:focus, .color-skin-1 #header .navbar-nav > .open > a, .color-skin-1 #header .navbar-nav > .open > a:hover, .color-skin-1 #header .navbar-nav > .open > a:focus {
+        color: #2ecc71;
+    }
+
+    .color-skin-1 #header .navbar-nav > .active > a, .color-skin-1 #header .navbar-nav > .active > a:hover, .color-skin-1 #header .navbar-nav > .active > a:focus, .color-skin-1 #header.affix .navbar-nav > .active > a, .color-skin-1 #header.affix .navbar-nav > .active > a:hover, .color-skin-1 #header.affix .navbar-nav > .active > a:focus, .color-skin-1 #header .navbar-nav > .active > a:after {
+        border-bottom-color: #2ecc71;
+    }
+
+    .color-skin-1 #header .navbar-nav > li > .dropdown-menu {
+        border-top-color: #2ecc71;
+    }
+
+    .color-skin-1 #header .dropdown-menu > .active > a, .color-skin-1 #header .dropdown-menu > .active > a:hover, .color-skin-1 #header .dropdown-menu > .active > a:focus, .color-skin-1 #header .dropdown-menu > li > a:hover, .color-skin-1 #header .dropdown-menu > li > a:focus {
+        background-color: #2ecc71;
+        border-color: #2ecc71;
+    }
+}
+
+/* Color Skin 2
+ * -------------------------- */
+.color-skin-2 a:hover, .color-skin-2 a:focus, .color-skin-2 #header .navbar-brand span, .color-skin-2 #page-title-wrapper .breadcrumb a:hover, .color-skin-2 #page-title-wrapper .breadcrumb a:focus, .color-skin-2 .nav-tabs > li.active > a, .color-skin-2 .nav-tabs > li.active > a:hover, .color-skin-2 .nav-tabs > li.active > a:focus, .color-skin-2 .flat-color:hover, .color-skin-2 .flat-color.btn-bordered, .color-skin-2 #footer-2 a:hover, .color-skin-2 .footer-brand span, .color-skin-2 .service .service-icon {
+    color: #1abc9c;
+}
+
+.color-skin-2 #header .navbar-toggle:hover, .color-skin-2 #header .navbar-toggle:focus, .color-skin-2 .tp-leftarrow:hover, .color-skin-2 .tp-rightarrow:hover, .color-skin-2 .flat-color, .color-skin-2 .flat-color.btn-bordered:hover, .color-skin-2 .controls .prev, .color-skin-2 .controls .next, .color-skin-2 .portfolio-item .portfolio-thumb .image-overlay, .color-skin-2 .portfolio-item .portfolio-thumb .portfolio-zoom:hover, .color-skin-2 .portfolio-item .portfolio-thumb .portfolio-link:hover, .color-skin-2 #toTopHover, .color-skin-2 .portfolio-filter.nav-pills > li.active > a, .color-skin-2 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-2 .portfolio-filter.nav-pills > li.active > a:focus, .color-skin-2 .pricing .price, .color-skin-2 .error404, .color-skin-2 .the-icons a:hover {
+    background-color: #1abc9c;
+}
+
+.color-skin-2 #header .navbar-toggle:hover, .color-skin-2 #header .navbar-toggle:focus, .color-skin-2 .flat-color, .color-skin-2 .flat-color:hover, .color-skin-2 .flat-color:active, .color-skin-2 .portfolio-filter.nav-pills > li.active > a, .color-skin-2 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-2 .portfolio-filter.nav-pills > li.active > a:focus {
+    border-color: #1abc9c;
+}
+
+@media (min-width: 768px) {
+    .color-skin-2 #header .navbar-nav > li > a:hover, .color-skin-2 #header .navbar-nav > li > a:focus, .color-skin-2 #header .navbar-nav > .open > a, .color-skin-2 #header .navbar-nav > .open > a:hover, .color-skin-2 #header .navbar-nav > .open > a:focus {
+        color: #1abc9c;
+    }
+
+    .color-skin-2 #header .navbar-nav > .active > a, .color-skin-2 #header .navbar-nav > .active > a:hover, .color-skin-2 #header .navbar-nav > .active > a:focus, .color-skin-2 #header.affix .navbar-nav > .active > a, .color-skin-2 #header.affix .navbar-nav > .active > a:hover, .color-skin-2 #header.affix .navbar-nav > .active > a:focus, .color-skin-2 #header .navbar-nav > .active > a:after {
+        border-bottom-color: #1abc9c;
+    }
+
+    .color-skin-2 #header .navbar-nav > li > .dropdown-menu {
+        border-top-color: #1abc9c;
+    }
+
+    .color-skin-2 #header .dropdown-menu > .active > a, .color-skin-2 #header .dropdown-menu > .active > a:hover, .color-skin-2 #header .dropdown-menu > .active > a:focus, .color-skin-2 #header .dropdown-menu > li > a:hover, .color-skin-2 #header .dropdown-menu > li > a:focus {
+        background-color: #1abc9c;
+        border-color: #1abc9c;
+    }
+}
+
+/* Color Skin 3
+ * -------------------------- */
+.color-skin-3 a:hover, .color-skin-3 a:focus, .color-skin-3 #header .navbar-brand span, .color-skin-3 #page-title-wrapper .breadcrumb a:hover, .color-skin-3 #page-title-wrapper .breadcrumb a:focus, .color-skin-3 .nav-tabs > li.active > a, .color-skin-3 .nav-tabs > li.active > a:hover, .color-skin-3 .nav-tabs > li.active > a:focus, .color-skin-3 .flat-color:hover, .color-skin-3 .flat-color.btn-bordered, .color-skin-3 #footer-2 a:hover, .color-skin-3 .footer-brand span, .color-skin-3 .service .service-icon {
+    color: #3498db;
+}
+
+.color-skin-3 #header .navbar-toggle:hover, .color-skin-3 #header .navbar-toggle:focus, .color-skin-3 .tp-leftarrow:hover, .color-skin-3 .tp-rightarrow:hover, .color-skin-3 .flat-color, .color-skin-3 .flat-color.btn-bordered:hover, .color-skin-3 .controls .prev, .color-skin-3 .controls .next, .color-skin-3 .portfolio-item .portfolio-thumb .image-overlay, .color-skin-3 .portfolio-item .portfolio-thumb .portfolio-zoom:hover, .color-skin-3 .portfolio-item .portfolio-thumb .portfolio-link:hover, .color-skin-3 #toTopHover, .color-skin-3 .portfolio-filter.nav-pills > li.active > a, .color-skin-3 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-3 .portfolio-filter.nav-pills > li.active > a:focus, .color-skin-3 .pricing .price, .color-skin-3 .error404, .color-skin-3 .the-icons a:hover {
+    background-color: #3498db;
+}
+
+.color-skin-3 #header .navbar-toggle:hover, .color-skin-3 #header .navbar-toggle:focus, .color-skin-3 .flat-color, .color-skin-3 .flat-color:hover, .color-skin-3 .flat-color:active, .color-skin-3 .portfolio-filter.nav-pills > li.active > a, .color-skin-3 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-3 .portfolio-filter.nav-pills > li.active > a:focus {
+    border-color: #3498db;
+}
+
+@media (min-width: 768px) {
+    .color-skin-3 #header .navbar-nav > li > a:hover, .color-skin-3 #header .navbar-nav > li > a:focus, .color-skin-3 #header .navbar-nav > .open > a, .color-skin-3 #header .navbar-nav > .open > a:hover, .color-skin-3 #header .navbar-nav > .open > a:focus {
+        color: #3498db;
+    }
+
+    .color-skin-3 #header .navbar-nav > .active > a, .color-skin-3 #header .navbar-nav > .active > a:hover, .color-skin-3 #header .navbar-nav > .active > a:focus, .color-skin-3 #header.affix .navbar-nav > .active > a, .color-skin-3 #header.affix .navbar-nav > .active > a:hover, .color-skin-3 #header.affix .navbar-nav > .active > a:focus, .color-skin-3 #header .navbar-nav > .active > a:after {
+        border-bottom-color: #3498db;
+    }
+
+    .color-skin-3 #header .navbar-nav > li > .dropdown-menu {
+        border-top-color: #3498db;
+    }
+
+    .color-skin-3 #header .dropdown-menu > .active > a, .color-skin-3 #header .dropdown-menu > .active > a:hover, .color-skin-3 #header .dropdown-menu > .active > a:focus, .color-skin-3 #header .dropdown-menu > li > a:hover, .color-skin-3 #header .dropdown-menu > li > a:focus {
+        background-color: #3498db;
+        border-color: #3498db;
+    }
+}
+
+
+/* Color Skin 4
+ * -------------------------- */
+.color-skin-4 a:hover, .color-skin-4 a:focus, .color-skin-4 #header .navbar-brand span, .color-skin-4 #page-title-wrapper .breadcrumb a:hover, .color-skin-4 #page-title-wrapper .breadcrumb a:focus, .color-skin-4 .nav-tabs > li.active > a, .color-skin-4 .nav-tabs > li.active > a:hover, .color-skin-4 .nav-tabs > li.active > a:focus, .color-skin-4 .flat-color:hover, .color-skin-4 .flat-color.btn-bordered, .color-skin-4 #footer-2 a:hover, .color-skin-4 .footer-brand span, .color-skin-4 .service .service-icon {
+    color: #9b59b6;
+}
+
+.color-skin-4 #header .navbar-toggle:hover, .color-skin-4 #header .navbar-toggle:focus, .color-skin-4 .tp-leftarrow:hover, .color-skin-4 .tp-rightarrow:hover, .color-skin-4 .flat-color, .color-skin-4 .flat-color.btn-bordered:hover, .color-skin-4 .controls .prev, .color-skin-4 .controls .next, .color-skin-4 .portfolio-item .portfolio-thumb .image-overlay, .color-skin-4 .portfolio-item .portfolio-thumb .portfolio-zoom:hover, .color-skin-4 .portfolio-item .portfolio-thumb .portfolio-link:hover, .color-skin-4 #toTopHover, .color-skin-4 .portfolio-filter.nav-pills > li.active > a, .color-skin-4 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-4 .portfolio-filter.nav-pills > li.active > a:focus, .color-skin-4 .pricing .price, .color-skin-4 .error404, .color-skin-4 .the-icons a:hover {
+    background-color: #9b59b6;
+}
+
+.color-skin-4 #header .navbar-toggle:hover, .color-skin-4 #header .navbar-toggle:focus, .color-skin-4 .flat-color, .color-skin-4 .flat-color:hover, .color-skin-4 .flat-color:active, .color-skin-4 .portfolio-filter.nav-pills > li.active > a, .color-skin-4 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-4 .portfolio-filter.nav-pills > li.active > a:focus {
+    border-color: #9b59b6;
+}
+
+@media (min-width: 768px) {
+    .color-skin-4 #header .navbar-nav > li > a:hover, .color-skin-4 #header .navbar-nav > li > a:focus, .color-skin-4 #header .navbar-nav > .open > a, .color-skin-4 #header .navbar-nav > .open > a:hover, .color-skin-4 #header .navbar-nav > .open > a:focus {
+        color: #9b59b6;
+    }
+
+    .color-skin-4 #header .navbar-nav > .active > a, .color-skin-4 #header .navbar-nav > .active > a:hover, .color-skin-4 #header .navbar-nav > .active > a:focus, .color-skin-4 #header.affix .navbar-nav > .active > a, .color-skin-4 #header.affix .navbar-nav > .active > a:hover, .color-skin-4 #header.affix .navbar-nav > .active > a:focus, .color-skin-4 #header .navbar-nav > .active > a:after {
+        border-bottom-color: #9b59b6;
+    }
+
+    .color-skin-4 #header .navbar-nav > li > .dropdown-menu {
+        border-top-color: #9b59b6;
+    }
+
+    .color-skin-4 #header .dropdown-menu > .active > a, .color-skin-4 #header .dropdown-menu > .active > a:hover, .color-skin-4 #header .dropdown-menu > .active > a:focus, .color-skin-4 #header .dropdown-menu > li > a:hover, .color-skin-4 #header .dropdown-menu > li > a:focus {
+        background-color: #9b59b6;
+        border-color: #9b59b6;
+    }
+}
+
+/* Color Skin 5
+ * -------------------------- */
+.color-skin-5 a:hover, .color-skin-5 a:focus, .color-skin-5 #header .navbar-brand span, .color-skin-5 #page-title-wrapper .breadcrumb a:hover, .color-skin-5 #page-title-wrapper .breadcrumb a:focus, .color-skin-5 .nav-tabs > li.active > a, .color-skin-5 .nav-tabs > li.active > a:hover, .color-skin-5 .nav-tabs > li.active > a:focus, .color-skin-5 .flat-color:hover, .color-skin-5 .flat-color.btn-bordered, .color-skin-5 #footer-2 a:hover, .color-skin-5 .footer-brand span, .color-skin-5 .service .service-icon {
+    color: #16a085;
+}
+
+.color-skin-5 #header .navbar-toggle:hover, .color-skin-5 #header .navbar-toggle:focus, .color-skin-5 .tp-leftarrow:hover, .color-skin-5 .tp-rightarrow:hover, .color-skin-5 .flat-color, .color-skin-5 .flat-color.btn-bordered:hover, .color-skin-5 .controls .prev, .color-skin-5 .controls .next, .color-skin-5 .portfolio-item .portfolio-thumb .image-overlay, .color-skin-5 .portfolio-item .portfolio-thumb .portfolio-zoom:hover, .color-skin-5 .portfolio-item .portfolio-thumb .portfolio-link:hover, .color-skin-5 #toTopHover, .color-skin-5 .portfolio-filter.nav-pills > li.active > a, .color-skin-5 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-5 .portfolio-filter.nav-pills > li.active > a:focus, .color-skin-5 .pricing .price, .color-skin-5 .error404, .color-skin-5 .the-icons a:hover {
+    background-color: #16a085;
+}
+
+.color-skin-5 #header .navbar-toggle:hover, .color-skin-5 #header .navbar-toggle:focus, .color-skin-5 .flat-color, .color-skin-5 .flat-color:hover, .color-skin-5 .flat-color:active, .color-skin-5 .portfolio-filter.nav-pills > li.active > a, .color-skin-5 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-5 .portfolio-filter.nav-pills > li.active > a:focus {
+    border-color: #16a085;
+}
+
+@media (min-width: 768px) {
+    .color-skin-5 #header .navbar-nav > li > a:hover, .color-skin-5 #header .navbar-nav > li > a:focus, .color-skin-5 #header .navbar-nav > .open > a, .color-skin-5 #header .navbar-nav > .open > a:hover, .color-skin-5 #header .navbar-nav > .open > a:focus {
+        color: #16a085;
+    }
+
+    .color-skin-5 #header .navbar-nav > .active > a, .color-skin-5 #header .navbar-nav > .active > a:hover, .color-skin-5 #header .navbar-nav > .active > a:focus, .color-skin-5 #header.affix .navbar-nav > .active > a, .color-skin-5 #header.affix .navbar-nav > .active > a:hover, .color-skin-5 #header.affix .navbar-nav > .active > a:focus, .color-skin-5 #header .navbar-nav > .active > a:after {
+        border-bottom-color: #16a085;
+    }
+
+    .color-skin-5 #header .navbar-nav > li > .dropdown-menu {
+        border-top-color: #16a085;
+    }
+
+    .color-skin-5 #header .dropdown-menu > .active > a, .color-skin-5 #header .dropdown-menu > .active > a:hover, .color-skin-5 #header .dropdown-menu > .active > a:focus, .color-skin-5 #header .dropdown-menu > li > a:hover, .color-skin-5 #header .dropdown-menu > li > a:focus {
+        background-color: #16a085;
+        border-color: #16a085;
+    }
+}
+
+/* Color Skin 6
+ * -------------------------- */
+.color-skin-6 a:hover, .color-skin-6 a:focus, .color-skin-6 #header .navbar-brand span, .color-skin-6 #page-title-wrapper .breadcrumb a:hover, .color-skin-6 #page-title-wrapper .breadcrumb a:focus, .color-skin-6 .nav-tabs > li.active > a, .color-skin-6 .nav-tabs > li.active > a:hover, .color-skin-6 .nav-tabs > li.active > a:focus, .color-skin-6 .flat-color:hover, .color-skin-6 .flat-color.btn-bordered, .color-skin-6 #footer-2 a:hover, .color-skin-6 .footer-brand span, .color-skin-6 .service .service-icon {
+    color: #27ae60;
+}
+
+.color-skin-6 #header .navbar-toggle:hover, .color-skin-6 #header .navbar-toggle:focus, .color-skin-6 .tp-leftarrow:hover, .color-skin-6 .tp-rightarrow:hover, .color-skin-6 .flat-color, .color-skin-6 .flat-color.btn-bordered:hover, .color-skin-6 .controls .prev, .color-skin-6 .controls .next, .color-skin-6 .portfolio-item .portfolio-thumb .image-overlay, .color-skin-6 .portfolio-item .portfolio-thumb .portfolio-zoom:hover, .color-skin-6 .portfolio-item .portfolio-thumb .portfolio-link:hover, .color-skin-6 #toTopHover, .color-skin-6 .portfolio-filter.nav-pills > li.active > a, .color-skin-6 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-6 .portfolio-filter.nav-pills > li.active > a:focus, .color-skin-6 .pricing .price, .color-skin-6 .error404, .color-skin-6 .the-icons a:hover {
+    background-color: #27ae60;
+}
+
+.color-skin-6 #header .navbar-toggle:hover, .color-skin-6 #header .navbar-toggle:focus, .color-skin-6 .flat-color, .color-skin-6 .flat-color:hover, .color-skin-6 .flat-color:active, .color-skin-6 .portfolio-filter.nav-pills > li.active > a, .color-skin-6 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-6 .portfolio-filter.nav-pills > li.active > a:focus {
+    border-color: #27ae60;
+}
+
+@media (min-width: 768px) {
+    .color-skin-6 #header .navbar-nav > li > a:hover, .color-skin-6 #header .navbar-nav > li > a:focus, .color-skin-6 #header .navbar-nav > .open > a, .color-skin-6 #header .navbar-nav > .open > a:hover, .color-skin-6 #header .navbar-nav > .open > a:focus {
+        color: #27ae60;
+    }
+
+    .color-skin-6 #header .navbar-nav > .active > a, .color-skin-6 #header .navbar-nav > .active > a:hover, .color-skin-6 #header .navbar-nav > .active > a:focus, .color-skin-6 #header.affix .navbar-nav > .active > a, .color-skin-6 #header.affix .navbar-nav > .active > a:hover, .color-skin-6 #header.affix .navbar-nav > .active > a:focus, .color-skin-6 #header .navbar-nav > .active > a:after {
+        border-bottom-color: #27ae60;
+    }
+
+    .color-skin-6 #header .navbar-nav > li > .dropdown-menu {
+        border-top-color: #27ae60;
+    }
+
+    .color-skin-6 #header .dropdown-menu > .active > a, .color-skin-6 #header .dropdown-menu > .active > a:hover, .color-skin-6 #header .dropdown-menu > .active > a:focus, .color-skin-6 #header .dropdown-menu > li > a:hover, .color-skin-6 #header .dropdown-menu > li > a:focus {
+        background-color: #27ae60;
+        border-color: #27ae60;
+    }
+}
+
+/* Color Skin 7
+ * -------------------------- */
+.color-skin-7 a:hover, .color-skin-7 a:focus, .color-skin-7 #header .navbar-brand span, .color-skin-7 #page-title-wrapper .breadcrumb a:hover, .color-skin-7 #page-title-wrapper .breadcrumb a:focus, .color-skin-7 .nav-tabs > li.active > a, .color-skin-7 .nav-tabs > li.active > a:hover, .color-skin-7 .nav-tabs > li.active > a:focus, .color-skin-7 .flat-color:hover, .color-skin-7 .flat-color.btn-bordered, .color-skin-7 #footer-2 a:hover, .color-skin-7 .footer-brand span, .color-skin-7 .service .service-icon {
+    color: #2980b9;
+}
+
+.color-skin-7 #header .navbar-toggle:hover, .color-skin-7 #header .navbar-toggle:focus, .color-skin-7 .tp-leftarrow:hover, .color-skin-7 .tp-rightarrow:hover, .color-skin-7 .flat-color, .color-skin-7 .flat-color.btn-bordered:hover, .color-skin-7 .controls .prev, .color-skin-7 .controls .next, .color-skin-7 .portfolio-item .portfolio-thumb .image-overlay, .color-skin-7 .portfolio-item .portfolio-thumb .portfolio-zoom:hover, .color-skin-7 .portfolio-item .portfolio-thumb .portfolio-link:hover, .color-skin-7 #toTopHover, .color-skin-7 .portfolio-filter.nav-pills > li.active > a, .color-skin-7 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-7 .portfolio-filter.nav-pills > li.active > a:focus, .color-skin-7 .pricing .price, .color-skin-7 .error404, .color-skin-7 .the-icons a:hover {
+    background-color: #2980b9;
+}
+
+.color-skin-7 #header .navbar-toggle:hover, .color-skin-7 #header .navbar-toggle:focus, .color-skin-7 .flat-color, .color-skin-7 .flat-color:hover, .color-skin-7 .flat-color:active, .color-skin-7 .portfolio-filter.nav-pills > li.active > a, .color-skin-7 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-7 .portfolio-filter.nav-pills > li.active > a:focus {
+    border-color: #2980b9;
+}
+
+@media (min-width: 768px) {
+    .color-skin-7 #header .navbar-nav > li > a:hover, .color-skin-7 #header .navbar-nav > li > a:focus, .color-skin-7 #header .navbar-nav > .open > a, .color-skin-7 #header .navbar-nav > .open > a:hover, .color-skin-7 #header .navbar-nav > .open > a:focus {
+        color: #2980b9;
+    }
+
+    .color-skin-7 #header .navbar-nav > .active > a, .color-skin-7 #header .navbar-nav > .active > a:hover, .color-skin-7 #header .navbar-nav > .active > a:focus, .color-skin-7 #header.affix .navbar-nav > .active > a, .color-skin-7 #header.affix .navbar-nav > .active > a:hover, .color-skin-7 #header.affix .navbar-nav > .active > a:focus, .color-skin-7 #header .navbar-nav > .active > a:after {
+        border-bottom-color: #2980b9;
+    }
+
+    .color-skin-7 #header .navbar-nav > li > .dropdown-menu {
+        border-top-color: #2980b9;
+    }
+
+    .color-skin-7 #header .dropdown-menu > .active > a, .color-skin-7 #header .dropdown-menu > .active > a:hover, .color-skin-7 #header .dropdown-menu > .active > a:focus, .color-skin-7 #header .dropdown-menu > li > a:hover, .color-skin-7 #header .dropdown-menu > li > a:focus {
+        background-color: #2980b9;
+        border-color: #2980b9;
+    }
+}
+
+/* Color Skin 8
+ * -------------------------- */
+.color-skin-8 a:hover, .color-skin-8 a:focus, .color-skin-8 #header .navbar-brand span, .color-skin-8 #page-title-wrapper .breadcrumb a:hover, .color-skin-8 #page-title-wrapper .breadcrumb a:focus, .color-skin-8 .nav-tabs > li.active > a, .color-skin-8 .nav-tabs > li.active > a:hover, .color-skin-8 .nav-tabs > li.active > a:focus, .color-skin-8 .flat-color:hover, .color-skin-8 .flat-color.btn-bordered, .color-skin-8 #footer-2 a:hover, .color-skin-8 .footer-brand span, .color-skin-8 .service .service-icon {
+    color: #8e44ad;
+}
+
+.color-skin-8 #header .navbar-toggle:hover, .color-skin-8 #header .navbar-toggle:focus, .color-skin-8 .tp-leftarrow:hover, .color-skin-8 .tp-rightarrow:hover, .color-skin-8 .flat-color, .color-skin-8 .flat-color.btn-bordered:hover, .color-skin-8 .controls .prev, .color-skin-8 .controls .next, .color-skin-8 .portfolio-item .portfolio-thumb .image-overlay, .color-skin-8 .portfolio-item .portfolio-thumb .portfolio-zoom:hover, .color-skin-8 .portfolio-item .portfolio-thumb .portfolio-link:hover, .color-skin-8 #toTopHover, .color-skin-8 .portfolio-filter.nav-pills > li.active > a, .color-skin-8 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-8 .portfolio-filter.nav-pills > li.active > a:focus, .color-skin-8 .pricing .price, .color-skin-8 .error404, .color-skin-8 .the-icons a:hover {
+    background-color: #8e44ad;
+}
+
+.color-skin-8 #header .navbar-toggle:hover, .color-skin-8 #header .navbar-toggle:focus, .color-skin-8 .flat-color, .color-skin-8 .flat-color:hover, .color-skin-8 .flat-color:active, .color-skin-8 .portfolio-filter.nav-pills > li.active > a, .color-skin-8 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-8 .portfolio-filter.nav-pills > li.active > a:focus {
+    border-color: #8e44ad;
+}
+
+@media (min-width: 768px) {
+    .color-skin-8 #header .navbar-nav > li > a:hover, .color-skin-8 #header .navbar-nav > li > a:focus, .color-skin-8 #header .navbar-nav > .open > a, .color-skin-8 #header .navbar-nav > .open > a:hover, .color-skin-8 #header .navbar-nav > .open > a:focus {
+        color: #8e44ad;
+    }
+
+    .color-skin-8 #header .navbar-nav > .active > a, .color-skin-8 #header .navbar-nav > .active > a:hover, .color-skin-8 #header .navbar-nav > .active > a:focus, .color-skin-8 #header.affix .navbar-nav > .active > a, .color-skin-8 #header.affix .navbar-nav > .active > a:hover, .color-skin-8 #header.affix .navbar-nav > .active > a:focus, .color-skin-8 #header .navbar-nav > .active > a:after {
+        border-bottom-color: #8e44ad;
+    }
+
+    .color-skin-8 #header .navbar-nav > li > .dropdown-menu {
+        border-top-color: #8e44ad;
+    }
+
+    .color-skin-8 #header .dropdown-menu > .active > a, .color-skin-8 #header .dropdown-menu > .active > a:hover, .color-skin-8 #header .dropdown-menu > .active > a:focus, .color-skin-8 #header .dropdown-menu > li > a:hover, .color-skin-8 #header .dropdown-menu > li > a:focus {
+        background-color: #8e44ad;
+        border-color: #8e44ad;
+    }
+}
+
+/* Color Skin 9
+ * -------------------------- */
+.color-skin-9 a:hover, .color-skin-9 a:focus, .color-skin-9 #header .navbar-brand span, .color-skin-9 #page-title-wrapper .breadcrumb a:hover, .color-skin-9 #page-title-wrapper .breadcrumb a:focus, .color-skin-9 .nav-tabs > li.active > a, .color-skin-9 .nav-tabs > li.active > a:hover, .color-skin-9 .nav-tabs > li.active > a:focus, .color-skin-9 .flat-color:hover, .color-skin-9 .flat-color.btn-bordered, .color-skin-9 #footer-2 a:hover, .color-skin-9 .footer-brand span, .color-skin-9 .service .service-icon {
+    color: #f1c40f;
+}
+
+.color-skin-9 #header .navbar-toggle:hover, .color-skin-9 #header .navbar-toggle:focus, .color-skin-9 .tp-leftarrow:hover, .color-skin-9 .tp-rightarrow:hover, .color-skin-9 .flat-color, .color-skin-9 .flat-color.btn-bordered:hover, .color-skin-9 .controls .prev, .color-skin-9 .controls .next, .color-skin-9 .portfolio-item .portfolio-thumb .image-overlay, .color-skin-9 .portfolio-item .portfolio-thumb .portfolio-zoom:hover, .color-skin-9 .portfolio-item .portfolio-thumb .portfolio-link:hover, .color-skin-9 #toTopHover, .color-skin-9 .portfolio-filter.nav-pills > li.active > a, .color-skin-9 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-9 .portfolio-filter.nav-pills > li.active > a:focus, .color-skin-9 .pricing .price, .color-skin-9 .error404, .color-skin-9 .the-icons a:hover {
+    background-color: #f1c40f;
+}
+
+.color-skin-9 #header .navbar-toggle:hover, .color-skin-9 #header .navbar-toggle:focus, .color-skin-9 .flat-color, .color-skin-9 .flat-color:hover, .color-skin-9 .flat-color:active, .color-skin-9 .portfolio-filter.nav-pills > li.active > a, .color-skin-9 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-9 .portfolio-filter.nav-pills > li.active > a:focus {
+    border-color: #f1c40f;
+}
+
+@media (min-width: 768px) {
+    .color-skin-9 #header .navbar-nav > li > a:hover, .color-skin-9 #header .navbar-nav > li > a:focus, .color-skin-9 #header .navbar-nav > .open > a, .color-skin-9 #header .navbar-nav > .open > a:hover, .color-skin-9 #header .navbar-nav > .open > a:focus {
+        color: #f1c40f;
+    }
+
+    .color-skin-9 #header .navbar-nav > .active > a, .color-skin-9 #header .navbar-nav > .active > a:hover, .color-skin-9 #header .navbar-nav > .active > a:focus, .color-skin-9 #header.affix .navbar-nav > .active > a, .color-skin-9 #header.affix .navbar-nav > .active > a:hover, .color-skin-9 #header.affix .navbar-nav > .active > a:focus, .color-skin-9 #header .navbar-nav > .active > a:after {
+        border-bottom-color: #f1c40f;
+    }
+
+    .color-skin-9 #header .navbar-nav > li > .dropdown-menu {
+        border-top-color: #f1c40f;
+    }
+
+    .color-skin-9 #header .dropdown-menu > .active > a, .color-skin-9 #header .dropdown-menu > .active > a:hover, .color-skin-9 #header .dropdown-menu > .active > a:focus, .color-skin-9 #header .dropdown-menu > li > a:hover, .color-skin-9 #header .dropdown-menu > li > a:focus {
+        background-color: #f1c40f;
+        border-color: #f1c40f;
+    }
+}
+
+/* Color Skin 10
+ * -------------------------- */
+.color-skin-10 a:hover, .color-skin-10 a:focus, .color-skin-10 #header .navbar-brand span, .color-skin-10 #page-title-wrapper .breadcrumb a:hover, .color-skin-10 #page-title-wrapper .breadcrumb a:focus, .color-skin-10 .nav-tabs > li.active > a, .color-skin-10 .nav-tabs > li.active > a:hover, .color-skin-10 .nav-tabs > li.active > a:focus, .color-skin-10 .flat-color:hover, .color-skin-10 .flat-color.btn-bordered, .color-skin-10 #footer-2 a:hover, .color-skin-10 .footer-brand span, .color-skin-10 .service .service-icon {
+    color: #e67e22;
+}
+
+.color-skin-10 #header .navbar-toggle:hover, .color-skin-10 #header .navbar-toggle:focus, .color-skin-10 .tp-leftarrow:hover, .color-skin-10 .tp-rightarrow:hover, .color-skin-10 .flat-color, .color-skin-10 .flat-color.btn-bordered:hover, .color-skin-10 .controls .prev, .color-skin-10 .controls .next, .color-skin-10 .portfolio-item .portfolio-thumb .image-overlay, .color-skin-10 .portfolio-item .portfolio-thumb .portfolio-zoom:hover, .color-skin-10 .portfolio-item .portfolio-thumb .portfolio-link:hover, .color-skin-10 #toTopHover, .color-skin-10 .portfolio-filter.nav-pills > li.active > a, .color-skin-10 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-10 .portfolio-filter.nav-pills > li.active > a:focus, .color-skin-10 .pricing .price, .color-skin-10 .error404, .color-skin-10 .the-icons a:hover {
+    background-color: #e67e22;
+}
+
+.color-skin-10 #header .navbar-toggle:hover, .color-skin-10 #header .navbar-toggle:focus, .color-skin-10 .flat-color, .color-skin-10 .flat-color:hover, .color-skin-10 .flat-color:active, .color-skin-10 .portfolio-filter.nav-pills > li.active > a, .color-skin-10 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-10 .portfolio-filter.nav-pills > li.active > a:focus {
+    border-color: #e67e22;
+}
+
+@media (min-width: 768px) {
+    .color-skin-10 #header .navbar-nav > li > a:hover, .color-skin-10 #header .navbar-nav > li > a:focus, .color-skin-10 #header .navbar-nav > .open > a, .color-skin-10 #header .navbar-nav > .open > a:hover, .color-skin-10 #header .navbar-nav > .open > a:focus {
+        color: #e67e22;
+    }
+
+    .color-skin-10 #header .navbar-nav > .active > a, .color-skin-10 #header .navbar-nav > .active > a:hover, .color-skin-10 #header .navbar-nav > .active > a:focus, .color-skin-10 #header.affix .navbar-nav > .active > a, .color-skin-10 #header.affix .navbar-nav > .active > a:hover, .color-skin-10 #header.affix .navbar-nav > .active > a:focus, .color-skin-10 #header .navbar-nav > .active > a:after {
+        border-bottom-color: #e67e22;
+    }
+
+    .color-skin-10 #header .navbar-nav > li > .dropdown-menu {
+        border-top-color: #e67e22;
+    }
+
+    .color-skin-10 #header .dropdown-menu > .active > a, .color-skin-10 #header .dropdown-menu > .active > a:hover, .color-skin-10 #header .dropdown-menu > .active > a:focus, .color-skin-10 #header .dropdown-menu > li > a:hover, .color-skin-10 #header .dropdown-menu > li > a:focus {
+        background-color: #e67e22;
+        border-color: #e67e22;
+    }
+}
+
+/* Color Skin 11
+ * -------------------------- */
+.color-skin-11 a:hover, .color-skin-11 a:focus, .color-skin-11 #header .navbar-brand span, .color-skin-11 #page-title-wrapper .breadcrumb a:hover, .color-skin-11 #page-title-wrapper .breadcrumb a:focus, .color-skin-11 .nav-tabs > li.active > a, .color-skin-11 .nav-tabs > li.active > a:hover, .color-skin-11 .nav-tabs > li.active > a:focus, .color-skin-11 .flat-color:hover, .color-skin-11 .flat-color.btn-bordered, .color-skin-11 #footer-2 a:hover, .color-skin-11 .footer-brand span, .color-skin-11 .service .service-icon {
+    color: #e74c3c;
+}
+
+.color-skin-11 #header .navbar-toggle:hover, .color-skin-11 #header .navbar-toggle:focus, .color-skin-11 .tp-leftarrow:hover, .color-skin-11 .tp-rightarrow:hover, .color-skin-11 .flat-color, .color-skin-11 .flat-color.btn-bordered:hover, .color-skin-11 .controls .prev, .color-skin-11 .controls .next, .color-skin-11 .portfolio-item .portfolio-thumb .image-overlay, .color-skin-11 .portfolio-item .portfolio-thumb .portfolio-zoom:hover, .color-skin-11 .portfolio-item .portfolio-thumb .portfolio-link:hover, .color-skin-11 #toTopHover, .color-skin-11 .portfolio-filter.nav-pills > li.active > a, .color-skin-11 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-11 .portfolio-filter.nav-pills > li.active > a:focus, .color-skin-11 .pricing .price, .color-skin-11 .error404, .color-skin-11 .the-icons a:hover {
+    background-color: #e74c3c;
+}
+
+.color-skin-11 #header .navbar-toggle:hover, .color-skin-11 #header .navbar-toggle:focus, .color-skin-11 .flat-color, .color-skin-11 .flat-color:hover, .color-skin-11 .flat-color:active, .color-skin-11 .portfolio-filter.nav-pills > li.active > a, .color-skin-11 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-11 .portfolio-filter.nav-pills > li.active > a:focus {
+    border-color: #e74c3c;
+}
+
+@media (min-width: 768px) {
+    .color-skin-11 #header .navbar-nav > li > a:hover, .color-skin-11 #header .navbar-nav > li > a:focus, .color-skin-11 #header .navbar-nav > .open > a, .color-skin-11 #header .navbar-nav > .open > a:hover, .color-skin-11 #header .navbar-nav > .open > a:focus {
+        color: #e74c3c;
+    }
+
+    .color-skin-11 #header .navbar-nav > .active > a, .color-skin-11 #header .navbar-nav > .active > a:hover, .color-skin-11 #header .navbar-nav > .active > a:focus, .color-skin-11 #header.affix .navbar-nav > .active > a, .color-skin-11 #header.affix .navbar-nav > .active > a:hover, .color-skin-11 #header.affix .navbar-nav > .active > a:focus, .color-skin-11 #header .navbar-nav > .active > a:after {
+        border-bottom-color: #e74c3c;
+    }
+
+    .color-skin-11 #header .navbar-nav > li > .dropdown-menu {
+        border-top-color: #e74c3c;
+    }
+
+    .color-skin-11 #header .dropdown-menu > .active > a, .color-skin-11 #header .dropdown-menu > .active > a:hover, .color-skin-11 #header .dropdown-menu > .active > a:focus, .color-skin-11 #header .dropdown-menu > li > a:hover, .color-skin-11 #header .dropdown-menu > li > a:focus {
+        background-color: #e74c3c;
+        border-color: #e74c3c;
+    }
+}
+
+/* Color Skin 12
+ * -------------------------- */
+.color-skin-12 a:hover, .color-skin-12 a:focus, .color-skin-12 #header .navbar-brand span, .color-skin-12 #page-title-wrapper .breadcrumb a:hover, .color-skin-12 #page-title-wrapper .breadcrumb a:focus, .color-skin-12 .nav-tabs > li.active > a, .color-skin-12 .nav-tabs > li.active > a:hover, .color-skin-12 .nav-tabs > li.active > a:focus, .color-skin-12 .flat-color:hover, .color-skin-12 .flat-color.btn-bordered, .color-skin-12 #footer-2 a:hover, .color-skin-12 .footer-brand span, .color-skin-12 .service .service-icon {
+    color: #f39c12;
+}
+
+.color-skin-12 #header .navbar-toggle:hover, .color-skin-12 #header .navbar-toggle:focus, .color-skin-12 .tp-leftarrow:hover, .color-skin-12 .tp-rightarrow:hover, .color-skin-12 .flat-color, .color-skin-12 .flat-color.btn-bordered:hover, .color-skin-12 .controls .prev, .color-skin-12 .controls .next, .color-skin-12 .portfolio-item .portfolio-thumb .image-overlay, .color-skin-12 .portfolio-item .portfolio-thumb .portfolio-zoom:hover, .color-skin-12 .portfolio-item .portfolio-thumb .portfolio-link:hover, .color-skin-12 #toTopHover, .color-skin-12 .portfolio-filter.nav-pills > li.active > a, .color-skin-12 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-12 .portfolio-filter.nav-pills > li.active > a:focus, .color-skin-12 .pricing .price, .color-skin-12 .error404, .color-skin-12 .the-icons a:hover {
+    background-color: #f39c12;
+}
+
+.color-skin-12 #header .navbar-toggle:hover, .color-skin-12 #header .navbar-toggle:focus, .color-skin-12 .flat-color, .color-skin-12 .flat-color:hover, .color-skin-12 .flat-color:active, .color-skin-12 .portfolio-filter.nav-pills > li.active > a, .color-skin-12 .portfolio-filter.nav-pills > li.active > a:hover, .color-skin-12 .portfolio-filter.nav-pills > li.active > a:focus {
+    border-color: #f39c12;
+}
+
+@media (min-width: 768px) {
+    .color-skin-12 #header .navbar-nav > li > a:hover, .color-skin-12 #header .navbar-nav > li > a:focus, .color-skin-12 #header .navbar-nav > .open > a, .color-skin-12 #header .navbar-nav > .open > a:hover, .color-skin-12 #header .navbar-nav > .open > a:focus {
+        color: #f39c12;
+    }
+
+    .color-skin-12 #header .navbar-nav > .active > a, .color-skin-12 #header .navbar-nav > .active > a:hover, .color-skin-12 #header .navbar-nav > .active > a:focus, .color-skin-12 #header.affix .navbar-nav > .active > a, .color-skin-12 #header.affix .navbar-nav > .active > a:hover, .color-skin-12 #header.affix .navbar-nav > .active > a:focus, .color-skin-12 #header .navbar-nav > .active > a:after {
+        border-bottom-color: #f39c12;
+    }
+
+    .color-skin-12 #header .navbar-nav > li > .dropdown-menu {
+        border-top-color: #f39c12;
+    }
+
+    .color-skin-12 #header .dropdown-menu > .active > a, .color-skin-12 #header .dropdown-menu > .active > a:hover, .color-skin-12 #header .dropdown-menu > .active > a:focus, .color-skin-12 #header .dropdown-menu > li > a:hover, .color-skin-12 #header .dropdown-menu > li > a:focus {
+        background-color: #f39c12;
+        border-color: #f39c12;
+    }
+}

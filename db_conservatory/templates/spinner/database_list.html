@@ -1,17 +1,37 @@
-{% extends "base.html" %}
+{% extends "base_update.html" %}
 
 {% block content %}
 <!-- Main component for a primary marketing message or call to action -->
-<div class="jumbotron">
-  <h1>Databases - for free!</h1>
-  <p>There are <strong>{{ all_containers }}</strong> containers running.</p>
+<div id="jumbo" class="jumbotron">
+    <div class="container">
+        <h1>Databases - for free!</h1>
+        <p>There are <strong>{{ all_containers }}</strong> containers running.</p>
+    </div>
 </div>
-<h2>Available databases</h2>
-{% for database in database_list %}
-  <div class="span4">
-    <h3>{{ database.name }}</h3>
-    <p>{{ database.description }}</p>
-    <a class="btn btn-lg btn-primary" href="{{ database.get_create_url }}" role="button">Start a {{ database.name }} database</a>
-  </div>
+<section class="pad-25">
+    <div class="container">
+    <h2>Available databases</h2>
+    <div class="row">
+    {% for database in database_list %}
+        <div class="col-md-4">
+            <h3>{{ database.name }}</h3>
+            <p>{{ database.description }}</p>
+            <a class="btn btn-lg btn-primary" href="{{ database.get_create_url }}" role="button">Start a {{ database.name }} database</a>
+        </div>
 {% endfor %}
+    </div>
+    </div>
+</section>
+<!-- <section class="pad-25">
+    <div class="container">
+    <h2>Available databases</h2>
+    {% for database in database_list %}
+        <div class="span4">
+            <h3>{{ database.name }}</h3>
+            <p>{{ database.description }}</p>
+            <a class="btn btn-lg btn-primary" href="{{ database.get_create_url }}" role="button">Start a {{ database.name }} database</a>
+        </div>
+{% endfor %}
+    </div>
+</section> -->
 {% endblock %}
