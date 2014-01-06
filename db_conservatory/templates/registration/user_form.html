@@ -1,10 +1,14 @@
-{% extends "base.html" %}
+{% extends "base_update.html" %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-
-<form action="" method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Register" />
-</form>
-
+<section>
+    <div class="container">
+        <h2>Register</h2>
+        <form method="post" role="form">{% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+</section>
 {% endblock %}      

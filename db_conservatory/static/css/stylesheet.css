@@ -822,7 +822,7 @@ blockquote small {
     background-color: #bdc3c7;
 
 }
-.controls {
+.theme-controls {
     float: right;
     position: absolute;
     top: 0;
@@ -830,7 +830,7 @@ blockquote small {
     background-color: #ffffff;
     padding-left: 20px;
 }
-.controls .prev, .controls .next {
+.theme-controls .prev, .theme-controls .next {
     display: inline-block;
     width: 25px;
     height: 25px;
@@ -844,17 +844,17 @@ blockquote small {
     filter: alpha(opacity=50);
 }
 
-.controls .prev.disabled, .controls .next.disabled,
-.controls .prev.disabled:hover, .controls .next.disabled:hover {
+.theme-controls .prev.disabled, .theme-controls .next.disabled,
+.theme-controls .prev.disabled:hover, .theme-controls .next.disabled:hover {
     background-color: #ecf0f1 !important;
     color: #2c3e50;    
 }
 
-.controls .prev:hover, .controls .next:hover {
+.theme-controls .prev:hover, .theme-controls .next:hover {
     opacity: 1; 
 }
 
-.controls .next {
+.theme-controls .next {
     right: 0;
 }
 

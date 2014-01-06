@@ -34,6 +34,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'profiles',
     'south',
     'spinner',
@@ -73,6 +74,8 @@ STATICFILES_DIRS = (
 TEMPLATE_DIRS = (
         os.path.join(BASE_DIR, 'templates'),
 )
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 SESSION_SAVE_EVERY_REQUEST = True
 

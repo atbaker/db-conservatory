@@ -1,44 +1,46 @@
-{% extends "base.html" %}
+{% extends "base_update.html" %}
 
 {% block content %}
-<!-- Main component for a primary marketing message or call to action -->
-<h1>Your new {{ container.database }} database is ready!</h1>
-<p>Database details:</p>
-<p><strong>ID:</strong> {{ container.container_id }}</p>
-<p><strong>Name:</strong> {{ container.name|capfirst }}</p>
-<p><strong>Active:</strong> {{ container.active }}</p>
-<ul>
-    <li><strong>URI:</strong> {{ container.uri }}</li>
-    <li><strong>Database:</strong> {{ container.database }}</li>
-    <li><strong>Session key:</strong> {{ container.session_key }}</li>
-    <li><strong>Created:</strong> {{ container.created }}</li>
-</ul>
+<section>
+    <div class="container">
+        <h1>Your new {{ container.database }} database is ready!</h1>
+        <p>Database details:</p>
+        <p><strong>ID:</strong> {{ container.container_id }}</p>
+        <p><strong>Name:</strong> {{ container.name|capfirst }}</p>
+        <p><strong>Active:</strong> {{ container.active }}</p>
+        <ul>
+            <li><strong>URI:</strong> {{ container.uri }}</li>
+            <li><strong>Database:</strong> {{ container.database }}</li>
+            <li><strong>Session key:</strong> {{ container.session_key }}</li>
+            <li><strong>Created:</strong> {{ container.created }}</li>
+        </ul>
 
 
-<p>You can connect to your database a few different ways:</p>
-<p><em>This section needs a lot of work</em></p>
+        <p>You can connect to your database a few different ways:</p>
+        <p><em>This section needs a lot of work</em></p>
 
-<h2>Through the command line</h2>
-<ol>
-    <li>
-        First, open up a terminal window. Then enter this command:
-        <pre>ssh student@athena.dbconservatory.com -p {{ current_info.ssh_port }}</pre>
-    </li>
-    <li>
-        When prompted, type <strong>'yes'</strong> (without the quotes) and then press Enter to trust this new connection.
-    </li>
-    <li>
-        You will see a password prompt that looks like this. Type in the password: 'student' (without the quotes). You will not see any characters appear as you type - this is normal. Press enter to complete your login.
-        <pre>student@athena.dbconservatory.com's password:</pre>
-    </li>
-    <li>
-        You will then see a screen like this. Type 'mysql' (without the quotes) and hit enter to connect to your database!
-        <pre>Welcome to your DB Conservatory MySQL server!
-Type 'mysql' without the quotes and hit enter to connect to your database.
-Last login: Sat Nov 23 17:21:27 2013 from 172.17.42.1
+        <h2>Through the command line</h2>
+        <ol>
+            <li>
+                First, open up a terminal window. Then enter this command:
+                <pre>ssh student@athena.dbconservatory.com -p {{ current_info.ssh_port }}</pre>
+            </li>
+            <li>
+                When prompted, type <strong>'yes'</strong> (without the quotes) and then press Enter to trust this new connection.
+            </li>
+            <li>
+                You will see a password prompt that looks like this. Type in the password: 'student' (without the quotes). You will not see any characters appear as you type - this is normal. Press enter to complete your login.
+                <pre>student@athena.dbconservatory.com's password:</pre>
+            </li>
+            <li>
+                You will then see a screen like this. Type 'mysql' (without the quotes) and hit enter to connect to your database!
+                <pre>Welcome to your DB Conservatory MySQL server!
+        Type 'mysql' without the quotes and hit enter to connect to your database.
+        Last login: Sat Nov 23 17:21:27 2013 from 172.17.42.1
 
-student@{{ container.container_id }}:~$</pre>
-    </li>
-</ol>
-
+        student@{{ container.container_id }}:~$</pre>
+            </li>
+        </ol>
+    </div>
+</section>
 {% endblock %}      
