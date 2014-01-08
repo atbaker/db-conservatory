@@ -8,9 +8,50 @@
         <p class="lead text-right">Play with your pick of the leading DBs. There are <strong>{{ all_containers }}</strong> containers running.</p>
     </div>
 </div>
-<section>
+<section id="our-services">
     <div class="container">
-        <h2>Available databases</h2>
+        <div class="row">
+            <div class="col-xs-12 col-sm-4">
+                <div class="service">
+                    <span class="service-icon">
+                    <i class="fa fa-book"></i>
+                    </span>
+                    <div class="service-details">
+                        <h4>Learn</h4>
+                        <p>Learn databases the best way - by working with real, live databases.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="service">
+                    <span class="service-icon">
+                    <i class="fa fa-cog"></i>
+                    </span>
+                    <div class="service-details">
+                        <h4>Experiment</h4>
+                        <p>Picking the right tool for your data work is important. Experiment with different databases, all ready to be hooked up to your prototype applications.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="service">
+                    <span class="service-icon">
+                    <i class="fa fa-globe"></i>
+                    </span>
+                    <div class="service-details">
+                        <h4>Do good</h4>
+                        <p>Hack away at public data sets that are pre-loaded into databases for you. Working with public data has never been so easy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="databases">
+    <div class="container">
+        <div class="subpage-title">
+            <h5>Available databases</h5>
+        </div>
         <div class="row">
             {% for database in database_list %}
                 <div class="col-md-4">

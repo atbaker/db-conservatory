@@ -1284,7 +1284,7 @@ blockquote small {
 /* Services
  * -------------------------- */
 .service {
-    padding-bottom: 50px;
+    padding-bottom: 25px;
 }
 .service.service-2 {
     padding: 25px !important;
