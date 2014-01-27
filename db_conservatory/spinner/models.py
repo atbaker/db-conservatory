@@ -4,8 +4,15 @@ from django.db import models
 
 from .utils import get, post
 
+DATABASE_CATEGORY_CHOICES = (
+    ('BS', 'Base'),
+    ('CM', 'Custom'),
+    ('DS', 'Dataset'),
+)
+
 class Database(models.Model):
     name = models.CharField(max_length=255)
+    category = models.CharField(max_length=2, choices=DATABASE_CATEGORY_CHOICES, default='BS')
     slug = models.SlugField()
     description = models.TextField(blank=True)
     image = models.CharField(max_length=255)

@@ -32,7 +32,7 @@ class DatabaseTestCase(TestCase):
         return db
 
     def _create_database_and_container(self, session_key=None, user=None):
-        responses.add(responses.POST, 'http://localhost:5000/v1/containers',
+        responses.add(responses.POST, 'http://localhost:8080/v1/containers',
             body=u'{"db_port": "49154", "id": "ef458b3613b3", \
                 "name": "/teal_lizard", "ssh_port": "49153", \
                 "status": "running", "uri": "/v1/containers/ef458b3613b3"}',
@@ -63,16 +63,16 @@ class DatabaseTestCase(TestCase):
 
     @responses.activate
     def test_create_container_anonymous(self):
-        responses.add(responses.GET, 'http://localhost:5000/v1/containers',
+        responses.add(responses.GET, 'http://localhost:8080/v1/containers',
             body=u'[]')
 
-        responses.add(responses.POST, 'http://localhost:5000/v1/containers',
+        responses.add(responses.POST, 'http://localhost:8080/v1/containers',
             body=u'{"db_port": "49154", "id": "ef458b3613b3", \
                 "name": "/teal_lizard", "ssh_port": "49153", \
                 "status": "running", "uri": "/v1/containers/ef458b3613b3"}',
             status=201)        
 
-        responses.add(responses.GET, 'http://localhost:5000/v1/containers/ef458b3613b3',
+        responses.add(responses.GET, 'http://localhost:8080/v1/containers/ef458b3613b3',
             body=u'{"db_port": "49154", "id": "ef458b3613b3", \
                 "name": "/teal_lizard", "ssh_port": "49153", \
                 "status": "running", "uri": "/v1/containers/ef458b3613b3"}',)               
@@ -91,16 +91,16 @@ class DatabaseTestCase(TestCase):
 
     @responses.activate
     def test_create_container_as_user(self):
-        responses.add(responses.GET, 'http://localhost:5000/v1/containers',
+        responses.add(responses.GET, 'http://localhost:8080/v1/containers',
             body=u'[]')
 
-        responses.add(responses.POST, 'http://localhost:5000/v1/containers',
+        responses.add(responses.POST, 'http://localhost:8080/v1/containers',
             body=u'{"db_port": "49154", "id": "ef458b3613b3", \
                 "name": "/teal_lizard", "ssh_port": "49153", \
                 "status": "running", "uri": "/v1/containers/ef458b3613b3"}',
             status=201)        
 
-        responses.add(responses.GET, 'http://localhost:5000/v1/containers/ef458b3613b3',
+        responses.add(responses.GET, 'http://localhost:8080/v1/containers/ef458b3613b3',
             body=u'{"db_port": "49154", "id": "ef458b3613b3", \
                 "name": "/teal_lizard", "ssh_port": "49153", \
                 "status": "running", "uri": "/v1/containers/ef458b3613b3"}',)               
@@ -121,10 +121,10 @@ class DatabaseTestCase(TestCase):
 
     @responses.activate
     def test_view_my_containers(self):
-        responses.add(responses.GET, 'http://localhost:5000/v1/containers',
+        responses.add(responses.GET, 'http://localhost:8080/v1/containers',
             body=u'[]')
 
-        responses.add(responses.GET, 'http://localhost:5000/v1/containers/ef458b3613b3',
+        responses.add(responses.GET, 'http://localhost:8080/v1/containers/ef458b3613b3',
             body=u'{"db_port": "49154", "id": "ef458b3613b3", \
                 "name": "/teal_lizard", "ssh_port": "49153", \
                 "status": "running", "uri": "/v1/containers/ef458b3613b3"}',)
@@ -140,14 +140,14 @@ class DatabaseTestCase(TestCase):
 
     @responses.activate
     def test_bad_request_return_none(self):
-        responses.add(responses.GET, 'http://localhost:5000/v1/badresource',
+        responses.add(responses.GET, 'http://localhost:8080/v1/badresource',
             status=404)
 
         self.assertEqual(get('badresource'), None)
 
     @responses.activate
     def test_bad_json_return_none(self):
-        responses.add(responses.GET, 'http://localhost:5000/v1/containers',
+        responses.add(responses.GET, 'http://localhost:8080/v1/containers',
             body=u'"db_port": "49154", "id": "ef458b3613b3", \
                 "name": "/teal_lizard", "ssh_port": "49153", \
                 "status": "running", "uri": "/v1/containers/ef458b3613b3"}',)        
@@ -158,9 +158,9 @@ class DatabaseTestCase(TestCase):
     def test_database_audit_missing_image(self):
         database = self._create_database()
 
-        responses.add(responses.GET, 'http://localhost:5000/v1/images',
+        responses.add(responses.GET, 'http://localhost:8080/v1/images',
             body=u'[]')
-        responses.add(responses.GET, 'http://localhost:5000/v1/containers',
+        responses.add(responses.GET, 'http://localhost:8080/v1/containers',
             body=u'[]')
         call_command('spin_docker_audit')
 
@@ -172,10 +172,10 @@ class DatabaseTestCase(TestCase):
     def test_container_audit_missing_container(self):
         container = self._create_database_and_container()
 
-        responses.add(responses.GET, 'http://localhost:5000/v1/images',
+        responses.add(responses.GET, 'http://localhost:8080/v1/images',
             body=u'[]')
-        responses.add(responses.GET, 'http://localhost:5000/v1/containers',
-            body=u'[]')        
+        responses.add(responses.GET, 'http://localhost:8080/v1/containers',
+            body=u'[]')
         call_command('spin_docker_audit')
 
         container = Container.objects.get(pk=container.container_id)

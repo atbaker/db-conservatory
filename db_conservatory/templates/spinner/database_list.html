@@ -55,9 +55,25 @@
         <div class="row">
             {% for database in database_list %}
                 <div class="col-md-4">
-                    <h3>{{ database.name }}</h3>
+                    <h4>{{ database.name }}</h4>
                     <p>{{ database.description }}</p>
                     <a class="btn btn-lg btn-primary" href="{{ database.get_create_url }}" role="button">Start a {{ database.name }} database</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section id="datasets" class="pad-top-25">
+    <div class="container">
+        <div class="subpage-title">
+            <h5>Public data sets</h5>
+        </div>
+        <div class="row">
+            {% for set in datasets %}
+                <div class="col-md-4">
+                    <h4>{{ set.name }}</h4>
+                    <p>{{ set.description }}</p>
+                    <a class="btn btn-lg btn-primary" href="{{ set.get_create_url }}" role="button">Explore {{ set.name }} data</a>
                 </div>
             {% endfor %}
         </div>
