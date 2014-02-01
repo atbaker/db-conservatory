@@ -3,44 +3,76 @@
 {% block content %}
 <section>
     <div class="container">
-        <h1>Your new {{ container.database }} database is ready!</h1>
-        <p>Database details:</p>
-        <p><strong>ID:</strong> {{ container.container_id }}</p>
-        <p><strong>Name:</strong> {{ container.name|capfirst }}</p>
-        <p><strong>Active:</strong> {{ container.active }}</p>
-        <ul>
-            <li><strong>URI:</strong> {{ container.uri }}</li>
-            <li><strong>Database:</strong> {{ container.database }}</li>
-            <li><strong>Session key:</strong> {{ container.session_key }}</li>
-            <li><strong>Created:</strong> {{ container.created }}</li>
+        <h1>Your {{ container.database }} database is ready!</h1>
+        <p>Your database is called <strong>{{ container.name|capfirst }}</strong>. He's eager to meet you! Here's how you can connect to him:</p>
+
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#terminal" data-toggle="tab">OS X / UNIX (Terminal)</a></li>
+          <li><a href="#putty" data-toggle="tab">Windows (PuTTY)</a></li>
+          <li><a href="#application" data-toggle="tab">Other applications</a></li>
         </ul>
 
+        <div class="tab-content">
+          <div class="tab-pane active" id="terminal">
+            <h4>Using the Terminal app is the easiest way to connect to your database</h4>
+            <ol>
+                <li>
+                    Open a new Terminal window. If you're on a Mac, the easiest way to find Terminal pressing ⌘ and the space bar, then typing "terminal" and pressing return.
+                </li>
+                <li>
+                    Enter this command: (You can copy and paste it)
+                    <pre>ssh student@athena.dbconservatory.com -p {{ current_info.ssh_port }}</pre>
+                </li>
+                <li>
+                    When prompted, type <strong>'yes'</strong> (without the quotes) and then press return to trust this new connection.
+                </li>
+                <li>
+                    You will see a password prompt that looks like this. Type in the password: <strong>"student"</strong> (without the quotes). You will not see any characters appear as you type - this is normal. Press return to complete your login.
+                    <pre>student@athena.dbconservatory.com's password:</pre>
+                </li>
+                <li>
+                    You're in! Follow the instructions in the terminal to connect to the database!
+                    <pre>{{ container.database.login_prompt }}
 
-        <p>You can connect to your database a few different ways:</p>
-        <p><em>This section needs a lot of work</em></p>
-
-        <h2>Through the command line</h2>
-        <ol>
-            <li>
-                First, open up a terminal window. Then enter this command:
-                <pre>ssh student@athena.dbconservatory.com -p {{ current_info.ssh_port }}</pre>
-            </li>
-            <li>
-                When prompted, type <strong>'yes'</strong> (without the quotes) and then press Enter to trust this new connection.
-            </li>
-            <li>
-                You will see a password prompt that looks like this. Type in the password: 'student' (without the quotes). You will not see any characters appear as you type - this is normal. Press enter to complete your login.
-                <pre>student@athena.dbconservatory.com's password:</pre>
-            </li>
-            <li>
-                You will then see a screen like this. Type 'mysql' (without the quotes) and hit enter to connect to your database!
-                <pre>Welcome to your DB Conservatory MySQL server!
-        Type 'mysql' without the quotes and hit enter to connect to your database.
-        Last login: Sat Nov 23 17:21:27 2013 from 172.17.42.1
-
-        student@{{ container.container_id }}:~$</pre>
-            </li>
-        </ol>
+student@{{ container.container_id|slice:":12" }}:~$</pre>
+                </li>
+            </ol>
+          </div>
+          <div class="tab-pane" id="putty">
+            <h4>Use PuTTY to connect to your database from a Windows computer</h4>
+            <ol>
+                <li>
+                    Click this link and save PuTTY to your computer: <a href="http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe">http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe</a>
+                </li>
+                <li>
+                    Open PuTTY and FILL ME IN LATER!!!!
+                </li>
+            </ol>
+          </div>
+          <div class="tab-pane" id="application">
+            <h4>Raw connection details you can use to connect any application to your database</h4>
+            <h5>Database:</h5>
+            <ul>
+                <li><strong>Hostname:</strong> athena.dbconservatory.com</li>
+                <li><strong>Port:</strong> {{ current_info.db_port }}</li>
+                {% if container.database.slug != 'mongodb' %}
+                    <li><strong>Username:</strong> student</li>
+                    <li><strong>Password:</strong> (none)</li>
+                {% endif %}
+            </ul>
+            <p>Using the {{ container.database }} command line client:</p>
+            <pre>{{ container.database.db_command }}{{ current_info.db_port }}</pre>
+            <h5>SSH:</h5>
+            <ul>
+                <li><strong>Hostname:</strong> athena.dbconservatory.com</li>
+                <li><strong>Port:</strong> {{ current_info.ssh_port }}</li>
+                <li><strong>Username:</strong> student</li>
+                <li><strong>Password:</strong> student</li>
+            </ul>
+            <p>Using the ssh command line client:</p>
+            <pre>ssh student@athena.dbconservatory.com -p {{ current_info.ssh_port }}</pre>
+          </div>
+        </div>
     </div>
 </section>
 {% endblock %}      

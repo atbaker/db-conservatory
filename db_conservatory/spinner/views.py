@@ -22,12 +22,12 @@ class DatabaseList(ListView):
 
     def get_queryset(self):
         queryset = super(DatabaseList, self).get_queryset()
-        queryset = queryset.filter(active=True, category='BS')
+        queryset = queryset.filter(active=True, category='BS').order_by('order')
         return queryset
 
     def get_context_data(self, **kwargs):
         context = super(DatabaseList, self).get_context_data(**kwargs)
-        context['datasets'] = Database.objects.filter(active=True, category='DS')
+        context['datasets'] = Database.objects.filter(active=True, category='DS').order_by('order')
         context['all_containers'] = len(get('containers'))
         return context    
 

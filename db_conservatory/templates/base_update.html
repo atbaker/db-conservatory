@@ -53,8 +53,8 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse navbar-ex1-collapse">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="{% url 'home' %}">Home</a>
-                                <li><a href="{% url 'container_list' %}">My databases</a></li>
+                                {% block nav_home %}<li><a href="{% url 'home' %}">Home</a></li>{% endblock %}
+                                {% block nav_my_databases %}<li><a href="{% url 'container_list' %}">My databases</a></li>{% endblock %}
                                 {% if user.is_authenticated %}
                                   <li><a href="#">Hi, {{ user.first_name }}</a></li>
                                   <li><a href="{% url 'logout' %}">Logout</a></li>
@@ -106,5 +106,6 @@
         <script src="{{ STATIC_URL }}js/jquery-2.0.3.min.js"></script>
         <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
         <!-- <script src="assets/isotope-site/jquery.isotope.min.js"></script> -->
+        {% block page_js %}{% endblock %}
     </body>
 </html>

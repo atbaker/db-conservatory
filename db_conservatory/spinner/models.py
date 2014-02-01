@@ -16,8 +16,11 @@ class Database(models.Model):
     slug = models.SlugField()
     description = models.TextField(blank=True)
     image = models.CharField(max_length=255)
+    order = models.IntegerField(null=True, blank=True)
     ports = models.CommaSeparatedIntegerField(max_length=50)
     active = models.BooleanField(default=True)
+    login_prompt = models.TextField(blank=True)
+    db_command = models.CharField(max_length=255, blank=True)
 
     def __unicode__(self):
         return self.name

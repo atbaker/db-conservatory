@@ -1,0 +1,66 @@
+[
+{
+  "pk": 1, 
+  "model": "spinner.database", 
+  "fields": {
+    "category": "BS", 
+    "description": "MySQL is the world's most popular open source database software, with over 100 million copies of its software downloaded or distributed throughout it's history.", 
+    "image": "mysql", 
+    "slug": "mysql", 
+    "ports": "22,3306", 
+    "login_prompt": "Welcome to your DB Conservatory MySQL server! \r\nType 'mysql' without the quotes and hit enter to connect to your database.", 
+    "active": true, 
+    "order": 1, 
+    "db_command": "mysql -u student -h athena.dbconservatory.com -P ", 
+    "name": "MySQL"
+  }
+},
+{
+  "pk": 2, 
+  "model": "spinner.database", 
+  "fields": {
+    "category": "BS", 
+    "description": "PostgreSQL is a powerful, open source object-relational database system. It has more than 15 years of active development and a proven architecture that has earned it a strong reputation for reliability, data integrity, and correctness.", 
+    "image": "postgres", 
+    "slug": "postgresql", 
+    "ports": "22,5432", 
+    "login_prompt": "Welcome to your DB Conservatory PostgreSQL server!\r\nType 'psql' without the quotes and hit enter to connect to your database.", 
+    "active": true, 
+    "order": 2, 
+    "db_command": "psql -h athena.dbconservatory.com -U student -p ", 
+    "name": "PostgreSQL"
+  }
+},
+{
+  "pk": 3, 
+  "model": "spinner.database", 
+  "fields": {
+    "category": "BS", 
+    "description": "MongoDB (from \"humongous\") is an open-source document database, and the leading NoSQL database.", 
+    "image": "mongo", 
+    "slug": "mongodb", 
+    "ports": "22,27017", 
+    "login_prompt": "Welcome to your DB Conservatory MongoDB server! \r\nType 'mongo' without the quotes and hit enter to connect to your database.", 
+    "active": true, 
+    "order": 3, 
+    "db_command": "mongo athena.dbconservatory.com:", 
+    "name": "MongoDB"
+  }
+},
+{
+  "pk": 4, 
+  "model": "spinner.database", 
+  "fields": {
+    "category": "DS", 
+    "description": "Q4 2013 ride data from Capital Bikeshare, loaded into a MySQL database.", 
+    "image": "bikeshare", 
+    "slug": "bikeshare", 
+    "ports": "22,3306", 
+    "login_prompt": "", 
+    "active": true, 
+    "order": 1, 
+    "db_command": "", 
+    "name": "Capital Bikeshare"
+  }
+}
+]
