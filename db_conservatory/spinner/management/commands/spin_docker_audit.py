@@ -1,13 +1,13 @@
 from django.core.management.base import BaseCommand
-from ...models import Database, Container
-from ...utils import get
+from spinner.models import Database, Container
+from spinner import spindocker
 
 class Command(BaseCommand):
     help = 'Verifies that all images and containers are available on spin-docker host'
 
     def handle(self, *args, **options):
         self.stdout.write('Checking images')
-        spin_docker_images = get('images')
+        spin_docker_images = spindocker.get('images')
         self.stdout.write('%s images in spin-docker' % len(spin_docker_images))
 
         dbc_images = Database.objects.all()
@@ -21,7 +21,7 @@ class Command(BaseCommand):
         self.stdout.write('Database audit complete')
 
         self.stdout.write('Checking containers')
-        spin_docker_containers = get('containers')
+        spin_docker_containers = spindocker.get('containers')
         spin_docker_containers = [c['id'] for c in spin_docker_containers]
         self.stdout.write('%s containers in spin-docker' % len(spin_docker_containers))
 

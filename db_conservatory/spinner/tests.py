@@ -2,10 +2,10 @@ from django.contrib.auth.models import User
 from django.test import TestCase
 from django.test.client import Client
 from .models import Database, Container
-from .utils import get, post
 from django.core.management import call_command
 
 import responses
+import spindocker
 
 import pdb
 
@@ -83,7 +83,9 @@ class DatabaseTestCase(TestCase):
 
         resp = self.c.get('/databases/mysql/create', follow=True)
         self.assertEqual(resp.status_code, 200)
-        self.assertIn("Your new %s database is ready!" % db, resp.content)
+        self.assertIn("Your %s database is ready!" % db, resp.content)
+        self.assertIn("49154", resp.content)
+        self.assertIn("49153", resp.content)
 
         new_container = Container.objects.all()[0]
         self.assertEqual(new_container.session_key, self.c.session.session_key)
@@ -113,7 +115,9 @@ class DatabaseTestCase(TestCase):
 
         resp = self.c.get('/databases/mysql/create', follow=True)
         self.assertEqual(resp.status_code, 200)
-        self.assertIn("Your new %s database is ready!" % db, resp.content)        
+        self.assertIn("Your %s database is ready!" % db, resp.content)  
+        self.assertIn("49154", resp.content)
+        self.assertIn("49153", resp.content)              
 
         new_container = Container.objects.all()[0]
         self.assertEqual(new_container.user.username, user)
@@ -136,14 +140,14 @@ class DatabaseTestCase(TestCase):
         resp = self.c.get('/databases/my-databases')
 
         self.assertEqual(resp.status_code, 200)
-        self.assertIn(str(container), resp.content)
+        self.assertIn(str(container.name), resp.content)
 
     @responses.activate
     def test_bad_request_return_none(self):
         responses.add(responses.GET, 'http://localhost:8080/v1/badresource',
             status=404)
 
-        self.assertEqual(get('badresource'), None)
+        self.assertEqual(spindocker.get('badresource'), None)
 
     @responses.activate
     def test_bad_json_return_none(self):
@@ -152,7 +156,7 @@ class DatabaseTestCase(TestCase):
                 "name": "/teal_lizard", "ssh_port": "49153", \
                 "status": "running", "uri": "/v1/containers/ef458b3613b3"}',)        
         
-        self.assertEqual(get('containers'), None)  
+        self.assertEqual(spindocker.get('containers'), None)  
 
     @responses.activate
     def test_database_audit_missing_image(self):
