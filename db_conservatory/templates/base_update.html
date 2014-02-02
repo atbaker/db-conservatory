@@ -74,6 +74,18 @@
             <!-- /#header -->
             
             <div class="main-wrapper">
+                {% if messages %}
+                    <section class="pad-top-25">
+                        <div class="container">
+                            {% for message in messages %}
+                            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %} alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                {{ message|safe }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+                {% endif %}
                 {% block content %}{% endblock %}
             </div>
 

@@ -23,6 +23,13 @@ def make_request(method, resource, data=None):
             r = requests.post(url,
                 auth=auth,
                 data=data)
+        elif method == 'PATCH':
+            r = requests.patch(url,
+                auth=auth,
+                data=data)
+        elif method == 'DELETE':
+            r = requests.delete(url,
+                auth=auth)
     except RequestException:
         logger.error('Spin-docker error at resource: %s' % resource)
         return None
@@ -40,3 +47,9 @@ def get(resource):
 
 def post(resource, data):
     return make_request('POST', resource, data)
+
+def patch(resource, data):
+    return make_request('PATCH', resource, data)
+
+def delete(resource):
+    return make_request('DELETE', resource)

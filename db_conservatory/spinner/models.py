@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.db import models
 
-from .utils import get, post
+import spindocker
 
 DATABASE_CATEGORY_CHOICES = (
     ('BS', 'Base'),
@@ -27,9 +27,9 @@ class Database(models.Model):
 
     def create_container(self, session_key=None, user=None):
         data = {'image': self.image, 'port': eval(self.ports)}
-        container_info = post('containers', data)
+        container_info = spindocker.post('containers', data)
         container = Container(container_id=container_info['id'],
-            name=container_info['name'].replace('_', ' ')[1:],
+            name=container_info['name'].replace('_', ' ')[1:].capitalize(),
             uri=container_info['uri'],
             database=self,
             session_key=session_key,
@@ -58,7 +58,21 @@ class Container(models.Model):
         return reverse('container', kwargs={'container_id': self.container_id})
 
     def get_spin_docker_info(self):
-        return get(self.uri)
+        return spindocker.get(self.uri)
 
     def is_running(self):
         return self.get_spin_docker_info()['status'] == 'running'
+
+    def start(self):
+        data = {'status': 'running'}
+        container_info = spindocker.patch(self.uri, data)
+        return container_info
+
+    def stop(self):
+        data = {'status': 'stopped'}
+        container_info = spindocker.patch(self.uri, data)
+        return container_info
+
+    def delete(self):
+        spindocker.delete(self.uri)
+        return super(Container, self).delete()

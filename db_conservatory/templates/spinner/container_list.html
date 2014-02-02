@@ -6,30 +6,45 @@
 <section>
     <div class="container">
         <h1>Your databases</h1>
-        You have <strong>{{ container_list|length }} databases.</strong>
+        <p>You have <strong>{{ container_list|length }} databases.</strong></p>
 
-        <h2>Running databases</h2>
-        <ul>
-        {% for container in container_list %}
-          {% if container.1 %}
-            <li><a href="{{ container.0.get_absolute_url }}">{{ container.0 }}</a></li>
-          {% endif %}
-        {% empty %}
-          <li>You have no runnning databases.</li>
-        {% endfor %}
-        </ul>
-
-
-        <h2>Stopped databases</h2>
-        <ul>
-        {% for container in container_list %}
-          {% if not container.1 %}
-            <li><a href="{{ container.0.get_absolute_url }}">{{ container.0 }}</a></li>
-          {% endif %}
-        {% empty %}
-          <li>You have no stopped databases.</li>
-        {% endfor %}
-        </ul>
+        <table class="table table-striped table-hover">
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <!-- <th>Dataset</th> -->
+            <th>Created</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+          {% for container in container_list %}
+            {% if container.is_running %}
+              <tr class="success">
+                <td><a href="{{ container.get_absolute_url }}"><strong>{{ container.name }}</strong></a></td>
+            {% else %}
+              <tr>
+                <td><strong>{{ container.name }}</strong></td>
+            {% endif %}
+              <td>{{ container.database }}</td>
+              <!-- <td>{{ container.dataset.name }}</td> -->
+              <td>{{ container.created }}</td>
+              <td>
+                {% if container.is_running %}
+                  Running
+                {% else %}
+                  Stopped
+                {% endif %}
+              </td>
+              <td>
+                {% if container.is_running %}
+                  <a class="btn btn-xs btn-primary" href="{% url 'stop_container' container.container_id %}" role="button">Stop</a>
+                {% else %}
+                  <a class="btn btn-xs btn-success" href="{% url 'start_container' container.container_id %}" role="button">Start</a>
+                {% endif %}
+                <a class="btn btn-xs btn-danger" href="{% url 'delete_container' container.container_id %}" role="button">Delete</a>
+            </tr>
+          {% endfor %}
+        </table>
     </div>
 </section>
 {% endblock %}      
