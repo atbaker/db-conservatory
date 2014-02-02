@@ -1731,6 +1731,12 @@ blockquote small {
     padding: 20px;
     border-top: 0;
 }
+.member-thumb {
+    border: 1px solid #ecf0f1;
+    padding: 20px;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
 .member-details .member-name {
     margin-top: 0;
     position: relative;

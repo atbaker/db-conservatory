@@ -56,10 +56,15 @@
         </div>
         <div class="row">
             {% for database in database_list %}
-                <div class="col-md-4">
-                    <h4>{{ database.name }}</h4>
-                    <p>{{ database.description }}</p>
-                    <a class="btn btn-lg btn-primary" href="{{ database.get_create_url }}" role="button">Start a {{ database.name }} database</a>
+                <div class="col-sm-6 col-md-4 team-member">
+                    <div class="member-thumb text-center">
+                        <img src="{{ STATIC_URL }}img/dbs/{{ database.slug }}.png" alt="{{ database }} logo">
+                    </div>
+                    <div class="member-details text-center">
+                        <h4>{{ database.name }}</h4>
+                        <p class="text-left">{{ database.description }}</p>
+                        <a class="btn btn-lg btn-primary" href="{{ database.get_create_url }}" role="button">Try {{ database.name }}</a>
+                    </div>
                 </div>
             {% endfor %}
         </div>
@@ -72,10 +77,15 @@
         </div>
         <div class="row">
             {% for set in datasets %}
-                <div class="col-md-4">
-                    <h4>{{ set.name }}</h4>
-                    <p>{{ set.description }}</p>
-                    <a class="btn btn-lg btn-primary" href="{{ set.get_create_url }}" role="button">Explore {{ set.name }} data</a>
+                <div class="col-sm-6 col-md-4 team-member">
+                    <div class="member-thumb text-center">
+                        <!-- <img src="{{ STATIC_URL }}img/dbs/{{ set.slug }}.png" alt="{{ database }} logo"> -->
+                    </div>
+                    <div class="member-details text-center">                   
+                        <h4>{{ set.name }}</h4>
+                        <p class="text-left">{{ set.description }}</p>
+                        <a class="btn btn-lg btn-primary" href="{{ set.get_create_url }}" role="button">Explore {{ set.name }} data</a>
+                    </div>
                 </div>
             {% endfor %}
         </div>
