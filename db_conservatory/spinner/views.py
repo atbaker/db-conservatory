@@ -51,6 +51,14 @@ class ContainerDetail(DetailView):
     model = Container
     pk_url_kwarg = 'container_id'
 
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        if not self.object.is_running():
+            messages.info(request, "Your database <strong>%s</strong> isn't running right now. Start it below to connect to it again." % self.object.name)
+            return HttpResponseRedirect(reverse('container_list'))
+        else:
+            return super(ContainerDetail, self).get(request, *args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super(ContainerDetail, self).get_context_data(**kwargs)
         context['current_info'] = self.object.get_spin_docker_info()
