@@ -24,7 +24,7 @@
                     <pre>ssh student@athena.dbconservatory.com -p {{ current_info.ssh_port }}</pre>
                 </li>
                 <li>
-                    When prompted, type <strong>'yes'</strong> (without the quotes) and then press return to trust this new connection.
+                    When prompted, type <strong>"yes"</strong> (without the quotes) and then press return to trust this new connection.
                 </li>
                 <li>
                     You will see a password prompt that looks like this. Type in the password: <strong>"student"</strong> (without the quotes). You will not see any characters appear as you type - this is normal. Press return to complete your login.
@@ -42,11 +42,32 @@ student@{{ container.container_id|slice:":12" }}:~$</pre>
             <h4>Use PuTTY to connect to your database from a Windows computer</h4>
             <ol>
                 <li>
-                    Click this link and save PuTTY to your computer: <a href="http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe">http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe</a>
+                    Click this link to download PuTTY to your computer: <a href="http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe">http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe</a>
                 </li>
                 <li>
-                    Open PuTTY and FILL ME IN LATER!!!!
+                    Find and open <strong>putty.exe</strong> file you just downloaded.
                 </li>
+                <li>
+                    Copy and paste the text below into the box called <strong>Host Name (or IP address)</strong>:
+                    <pre>student@athena.dbconservatory.com</pre>
+                </li>
+                <li>
+                    Copy and paste this number into the <strong>Port</strong> box right next to it:
+                    <pre>{{ current_info.ssh_port }}</pre>
+                </li>
+                <li>
+                    Click <strong>Open</strong> at the bottom of the window to start the connection.
+                </li>
+                <li>
+                    You will see a password prompt that looks like this. Type in the password: <strong>"student"</strong> (without the quotes). You will not see any characters appear as you type - this is normal. Press enter to complete your login.
+                    <pre>student@athena.dbconservatory.com's password:</pre>
+                </li>
+                <li>
+                    You're in! Follow the instructions in the terminal to connect to the database!
+                    <pre>{{ container.database.login_prompt }}
+
+student@{{ container.container_id|slice:":12" }}:~$</pre>
+                </li>                
             </ol>
           </div>
           <div class="tab-pane" id="application">
