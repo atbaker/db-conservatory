@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404
@@ -9,6 +10,7 @@ from braces.views import LoginRequiredMixin
 from .models import Database, Container
 import spindocker
 
+@login_required
 def create_container(request, database):
     db = get_object_or_404(Database, slug=database)    
     if request.user.is_authenticated():
@@ -18,6 +20,7 @@ def create_container(request, database):
         request.session.modified = True
     return HttpResponseRedirect(container.get_absolute_url())
 
+@login_required
 def update_container(request, container_id, action):
     container = get_object_or_404(Container, container_id=container_id)
 
@@ -47,7 +50,7 @@ class DatabaseList(ListView):
         context['all_containers'] = len(spindocker.get('containers'))
         return context    
 
-class ContainerDetail(DetailView):
+class ContainerDetail(LoginRequiredMixin, DetailView):
     model = Container
     pk_url_kwarg = 'container_id'
 
