@@ -20,7 +20,7 @@
   "model": "spinner.database", 
   "fields": {
     "category": "BS", 
-    "description": "PostgreSQL is a powerful, open source object-relational database system. It has more than 15 years of active development and a proven architecture that has earned it a strong reputation for reliability, data integrity, and correctness.", 
+    "description": "PostgreSQL is a powerful, open source object-relational database system. It has more than 15 years of active development and a strong reputation for reliability, data integrity, and correctness.", 
     "image": "postgres", 
     "slug": "postgresql", 
     "ports": "22,5432", 
@@ -60,7 +60,7 @@
     "active": true, 
     "order": 1, 
     "db_command": "", 
-    "name": "Capital Bikeshare"
+    "name": "CaBi"
   }
 }
 ]
