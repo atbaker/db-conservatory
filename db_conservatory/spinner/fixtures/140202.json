@@ -21,7 +21,7 @@
   "fields": {
     "category": "BS", 
     "description": "PostgreSQL is a powerful, open source object-relational database system. It has more than 15 years of active development and a strong reputation for reliability, data integrity, and correctness.", 
-    "image": "postgres", 
+    "image": "postgresql", 
     "slug": "postgresql", 
     "ports": "22,5432", 
     "login_prompt": "Welcome to your DB Conservatory PostgreSQL server!\r\nType 'psql' without the quotes and hit enter to connect to your database.", 
@@ -37,7 +37,7 @@
   "fields": {
     "category": "BS", 
     "description": "MongoDB (from \"humongous\") is an open-source document database, and the leading NoSQL database.", 
-    "image": "mongo", 
+    "image": "mongodb", 
     "slug": "mongodb", 
     "ports": "22,27017", 
     "login_prompt": "Welcome to your DB Conservatory MongoDB server! \r\nType 'mongo' without the quotes and hit enter to connect to your database.", 
