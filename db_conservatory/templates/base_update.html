@@ -54,12 +54,12 @@
                         <div class="collapse navbar-collapse navbar-ex1-collapse">
                             <ul class="nav navbar-nav">
                                 {% block nav_home %}<li><a href="{% url 'home' %}">Home</a></li>{% endblock %}
-                                {% block nav_my_databases %}<li><a href="{% url 'container_list' %}">My databases</a></li>{% endblock %}
                                 {% if user.is_authenticated %}
-                                  <li><a href="#">Hi, {{ user.first_name }}</a></li>
+                                  <!-- <li><a href="#">Hi, {{ user.first_name }}</a></li> -->
+                                  {% block nav_my_databases %}<li><a href="{% url 'container_list' %}">My databases</a></li>{% endblock %}
                                   <li><a href="{% url 'logout' %}">Logout</a></li>
                                 {% else %}
-                                  <!-- <li><a href="{% url 'register' %}">Register</a></li> -->
+                                  {% comment %}<li><a href="{% url 'register' %}">Register</a></li>{% endcomment %}
                                   <li><a href="{% url 'login' %}">Login</a></li>              
                                 {% endif %}                                
                             </ul>
