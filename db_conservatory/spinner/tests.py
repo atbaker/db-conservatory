@@ -27,15 +27,20 @@ class DatabaseTestCase(TestCase):
     def _create_database(self):
         db = Database.objects.create(name='MySQL',
             slug='mysql',
-            image='mysqltoday',
+            image='mysql',
             ports='3306,22')
         return db
 
     def _create_database_and_container(self, session_key=None, user=None):
         responses.add(responses.POST, 'http://localhost:8080/v1/containers',
-            body=u'{"db_port": "49154", "id": "ef458b3613b3", \
-                "name": "/teal_lizard", "ssh_port": "49153", \
-                "status": "running", "uri": "/v1/containers/ef458b3613b3"}',
+            body=u'{"active_connections": "0", \
+                "db_port": "49312", \
+                "id": "de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea", \
+                "image": "mysql", \
+                "name": "/trusting_mccarthy", \
+                "ssh_port": "49311", \
+                "status": "running", \
+                "uri": "/v1/containers/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea"}',
             status=201)
 
         db = self._create_database()
@@ -52,7 +57,7 @@ class DatabaseTestCase(TestCase):
     def test_database_attributes(self):
         db = self._create_database()
 
-        self.assertEqual(db.image, 'mysqltoday')
+        self.assertEqual(db.image, 'mysql')
         self.assertEqual(db.ports, '3306,22')
 
     @responses.activate
@@ -67,15 +72,25 @@ class DatabaseTestCase(TestCase):
             body=u'[]')
 
         responses.add(responses.POST, 'http://localhost:8080/v1/containers',
-            body=u'{"db_port": "49154", "id": "ef458b3613b3", \
-                "name": "/teal_lizard", "ssh_port": "49153", \
-                "status": "running", "uri": "/v1/containers/ef458b3613b3"}',
+            body=u'{"active_connections": "0", \
+                "db_port": "49312", \
+                "id": "de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea", \
+                "image": "mysql", \
+                "name": "/trusting_mccarthy", \
+                "ssh_port": "49311", \
+                "status": "running", \
+                "uri": "/v1/containers/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea"}',
             status=201)        
 
-        responses.add(responses.GET, 'http://localhost:8080/v1/containers/ef458b3613b3',
-            body=u'{"db_port": "49154", "id": "ef458b3613b3", \
-                "name": "/teal_lizard", "ssh_port": "49153", \
-                "status": "running", "uri": "/v1/containers/ef458b3613b3"}',)               
+        responses.add(responses.GET, 'http://localhost:8080/v1/containers/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea',
+            body=u'{"active_connections": "0", \
+                "db_port": "49312", \
+                "id": "de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea", \
+                "image": "mysql", \
+                "name": "/trusting_mccarthy", \
+                "ssh_port": "49311", \
+                "status": "running", \
+                "uri": "/v1/containers/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea"}',)               
 
         db = self._create_database()
 
@@ -84,8 +99,8 @@ class DatabaseTestCase(TestCase):
         resp = self.c.get('/databases/mysql/create', follow=True)
         self.assertEqual(resp.status_code, 200)
         self.assertIn("Your %s database is ready!" % db, resp.content)
-        self.assertIn("49154", resp.content)
-        self.assertIn("49153", resp.content)
+        self.assertIn("49311", resp.content)
+        self.assertIn("49312", resp.content)
 
         new_container = Container.objects.all()[0]
         self.assertEqual(new_container.session_key, self.c.session.session_key)
@@ -97,15 +112,25 @@ class DatabaseTestCase(TestCase):
             body=u'[]')
 
         responses.add(responses.POST, 'http://localhost:8080/v1/containers',
-            body=u'{"db_port": "49154", "id": "ef458b3613b3", \
-                "name": "/teal_lizard", "ssh_port": "49153", \
-                "status": "running", "uri": "/v1/containers/ef458b3613b3"}',
-            status=201)        
+            body=u'{"active_connections": "0", \
+                "db_port": "49312", \
+                "id": "de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea", \
+                "image": "mysql", \
+                "name": "/trusting_mccarthy", \
+                "ssh_port": "49311", \
+                "status": "running", \
+                "uri": "/v1/containers/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea"}',
+            status=201)
 
-        responses.add(responses.GET, 'http://localhost:8080/v1/containers/ef458b3613b3',
-            body=u'{"db_port": "49154", "id": "ef458b3613b3", \
-                "name": "/teal_lizard", "ssh_port": "49153", \
-                "status": "running", "uri": "/v1/containers/ef458b3613b3"}',)               
+        responses.add(responses.GET, 'http://localhost:8080/v1/containers/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea',
+            body=u'{"active_connections": "0", \
+                "db_port": "49312", \
+                "id": "de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea", \
+                "image": "mysql", \
+                "name": "/trusting_mccarthy", \
+                "ssh_port": "49311", \
+                "status": "running", \
+                "uri": "/v1/containers/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea"}')               
 
         db = self._create_database()
 
@@ -116,8 +141,8 @@ class DatabaseTestCase(TestCase):
         resp = self.c.get('/databases/mysql/create', follow=True)
         self.assertEqual(resp.status_code, 200)
         self.assertIn("Your %s database is ready!" % db, resp.content)  
-        self.assertIn("49154", resp.content)
-        self.assertIn("49153", resp.content)              
+        self.assertIn("49311", resp.content)
+        self.assertIn("49312", resp.content)              
 
         new_container = Container.objects.all()[0]
         self.assertEqual(new_container.user.username, user)
@@ -128,10 +153,15 @@ class DatabaseTestCase(TestCase):
         responses.add(responses.GET, 'http://localhost:8080/v1/containers',
             body=u'[]')
 
-        responses.add(responses.GET, 'http://localhost:8080/v1/containers/ef458b3613b3',
-            body=u'{"db_port": "49154", "id": "ef458b3613b3", \
-                "name": "/teal_lizard", "ssh_port": "49153", \
-                "status": "running", "uri": "/v1/containers/ef458b3613b3"}',)
+        responses.add(responses.GET, 'http://localhost:8080/v1/containers/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea',
+            body=u'{"active_connections": "0", \
+                "db_port": "49312", \
+                "id": "de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea", \
+                "image": "mysql", \
+                "name": "/trusting_mccarthy", \
+                "ssh_port": "49311", \
+                "status": "running", \
+                "uri": "/v1/containers/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea"}')
 
         user = self._create_and_login_user()
 
@@ -152,9 +182,14 @@ class DatabaseTestCase(TestCase):
     @responses.activate
     def test_bad_json_return_none(self):
         responses.add(responses.GET, 'http://localhost:8080/v1/containers',
-            body=u'"db_port": "49154", "id": "ef458b3613b3", \
-                "name": "/teal_lizard", "ssh_port": "49153", \
-                "status": "running", "uri": "/v1/containers/ef458b3613b3"}',)        
+            body=u'"active_connections": "0", \
+                "db_port": "49312", \
+                "id": "de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea", \
+                "image": "mysql", \
+                "name": "/trusting_mccarthy", \
+                "ssh_port": "49311", \
+                "status": "running", \
+                "uri": "/v1/containers/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea"}',)        
         
         self.assertEqual(spindocker.get('containers'), None)  
 
@@ -185,3 +220,117 @@ class DatabaseTestCase(TestCase):
         container = Container.objects.get(pk=container.container_id)
 
         self.assertFalse(container.active)
+
+    @responses.activate
+    def test_stop_container(self):
+        container = self._create_database_and_container()
+
+        responses.add(responses.PATCH, 'http://localhost:8080/v1/containers/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea',
+            body=u'{"active_connections": "0", \
+                "db_port": "49312", \
+                "id": "de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea", \
+                "image": "mysql", \
+                "name": "/trusting_mccarthy", \
+                "ssh_port": "49311", \
+                "status": "stopping", \
+                "uri": "/v1/containers/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea"}')
+
+        container = Container.objects.get(pk=container.container_id)
+        response = container.stop()
+
+        self.assertEqual(response['status'], 'stopping')
+
+    @responses.activate
+    def test_update_container_stop(self):
+        container = self._create_database_and_container()
+        user = self._create_and_login_user()
+
+        resp = self.c.get('/databases/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea/stop',
+            follow=True)
+
+        self.assertRedirects(resp, '/databases/my-databases', status_code=302, target_status_code=200)
+        self.assertIn('is now stopped.', resp.content)
+
+    @responses.activate
+    def test_start_container(self):
+        container = self._create_database_and_container()
+
+        responses.add(responses.PATCH, 'http://localhost:8080/v1/containers/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea',
+            body=u'{"active_connections": "0", \
+                "db_port": "49312", \
+                "id": "de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea", \
+                "image": "mysql", \
+                "name": "/trusting_mccarthy", \
+                "ssh_port": "49311", \
+                "status": "running", \
+                "uri": "/v1/containers/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea"}')
+
+        container = Container.objects.get(pk=container.container_id)
+        response = container.start()
+
+        self.assertEqual(response['status'], 'running')
+
+    @responses.activate
+    def test_update_container_start(self):
+        container = self._create_database_and_container()
+
+        responses.add(responses.GET, 'http://localhost:8080/v1/containers/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea',
+            body=u'{"active_connections": "0", \
+                "db_port": "49312", \
+                "id": "de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea", \
+                "image": "mysql", \
+                "name": "/trusting_mccarthy", \
+                "ssh_port": "49311", \
+                "status": "running", \
+                "uri": "/v1/containers/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea"}')
+
+        resp = self.c.get('/databases/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea/start',
+            follow=True)
+
+        self.assertRedirects(resp, '/databases/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea', status_code=302, target_status_code=200)     
+
+    @responses.activate
+    def test_delete_container(self):
+        container = self._create_database_and_container()
+
+        responses.add(responses.DELETE, 'http://localhost:8080/v1/containers/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea',
+            body=u'[]',
+            status=204)
+
+        container = Container.objects.get(pk=container.container_id)
+        response = container.delete()
+
+        self.assertIsNone(response)
+        self.assertEqual(len(Container.objects.all()), 0)   
+
+    @responses.activate
+    def test_update_container_delete(self):
+        container = self._create_database_and_container()
+        user = self._create_and_login_user()
+
+        resp = self.c.get('/databases/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea/delete',
+            follow=True)
+
+        self.assertRedirects(resp, '/databases/my-databases', status_code=302, target_status_code=200)
+        self.assertIn('was deleted.', resp.content)    
+
+    @responses.activate
+    def test_view_stopped_container(self):
+        container = self._create_database_and_container()
+        user = self._create_and_login_user()        
+
+        responses.add(responses.GET, 'http://localhost:8080/v1/containers/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea',
+            body=u'{"active_connections": "0", \
+                "db_port": "", \
+                "id": "de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea", \
+                "image": "mysql", \
+                "name": "/trusting_mccarthy", \
+                "ssh_port": "", \
+                "status": "stopped", \
+                "uri": "/v1/containers/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea"}')
+
+        resp = self.c.get('/databases/de1288572b5131349104e9780fca8a4049a92b80a8687d6a587ae66c360906ea',
+            follow=True)
+
+        self.assertRedirects(resp, '/databases/my-databases', status_code=302, target_status_code=200)
+        self.assertIn("isn't running right now.", resp.content)
