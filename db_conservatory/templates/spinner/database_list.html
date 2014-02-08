@@ -7,7 +7,7 @@
 <div id="jumbo" class="jumbotron">
     <div class="container">
         <h1 class="text-right">Learn databases</h1>
-        <p class="lead text-right">Play with your pick of the leading DBs. There are <strong>{{ all_containers }}</strong> containers running.</p>
+        <p class="lead text-right">Play with your pick of the leading DBs</p>
     </div>
 </div>
 <section id="our-services">
@@ -58,11 +58,11 @@
             {% for database in database_list %}
                 <div class="col-sm-6 col-md-4 team-member">
                     <div class="member-thumb text-center">
-                        <img src="{{ STATIC_URL }}img/dbs/{{ database.slug }}.png" alt="{{ database }} logo">
+                        <img src="{{ STATIC_URL }}img/dbs/{{ database.image }}.png" alt="{{ database }} logo">
                     </div>
                     <div class="member-details text-center">
                         <h4>{{ database.name }}</h4>
-                        <p class="text-left">{{ database.description }}</p>
+                        <p class="text-left">{{ database.short_description }}</p>
                         <a class="btn btn-lg btn-primary" href="{{ database.get_create_url }}" role="button">Try {{ database.name }}</a>
                     </div>
                 </div>
@@ -79,11 +79,11 @@
             {% for set in datasets %}
                 <div class="col-sm-6 col-md-4 team-member">
                     <div class="member-thumb text-center">
-                        <!-- <img src="{{ STATIC_URL }}img/dbs/{{ set.slug }}.png" alt="{{ database }} logo"> -->
+                        <!-- <img src="{{ STATIC_URL }}img/dbs/{{ set.image }}.png" alt="{{ database }} logo"> -->
                     </div>
                     <div class="member-details text-center">                   
                         <h4>{{ set.name }}</h4>
-                        <p class="text-left">{{ set.description }}</p>
+                        <p class="text-left">{{ set.short_description }}</p>
                         <a class="btn btn-lg btn-primary" href="{{ set.get_create_url }}" role="button">Explore {{ set.name }} data</a>
                     </div>
                 </div>

@@ -1,0 +1,66 @@
+[
+{
+  "pk": 1, 
+  "model": "spinner.database", 
+  "fields": {
+    "category": "BS", 
+    "name": "MySQL", 
+    "login_prompt": "Welcome to your DB Conservatory MySQL server! \r\nType 'mysql' without the quotes and hit enter to connect to your database.", 
+    "image": "mysql", 
+    "long_description": "<ul>\r\n<li><a href=\"https://www.udacity.com/course/viewer#!/c-cs253/l-48756013/m-48712316\" target=\"_blank\">Udacity database lesson</a></li>\r\n<li><a href=\"http://sql.learncodethehardway.org/\" target=\"_blank\">Learn SQL the hard way</a></li>\r\n</ul>", 
+    "active": true, 
+    "short_description": "MySQL is the world's most popular open source database software, with over 100 million copies of its software downloaded or distributed throughout it's history.", 
+    "order": 1, 
+    "db_command": "mysql -u student -h athena.dbconservatory.com -P ", 
+    "ports": "22,3306"
+  }
+},
+{
+  "pk": 2, 
+  "model": "spinner.database", 
+  "fields": {
+    "category": "BS", 
+    "name": "PostgreSQL", 
+    "login_prompt": "Welcome to your DB Conservatory PostgreSQL server!\r\nType 'psql' without the quotes and hit enter to connect to your database.", 
+    "image": "postgresql", 
+    "long_description": "<ul>\r\n<li><a href=\"https://www.udacity.com/course/viewer#!/c-cs253/l-48756013/m-48712316\" target=\"_blank\">Udacity database lesson</a></li>\r\n<li><a href=\"http://sql.learncodethehardway.org/\" target=\"_blank\">Learn SQL the hard way</a></li>\r\n</ul>", 
+    "active": true, 
+    "short_description": "PostgreSQL is a powerful, open source object-relational database system. It has more than 15 years of active development and a strong reputation for reliability, data integrity, and correctness.", 
+    "order": 2, 
+    "db_command": "psql -h athena.dbconservatory.com -U student -p ", 
+    "ports": "22,5432"
+  }
+},
+{
+  "pk": 3, 
+  "model": "spinner.database", 
+  "fields": {
+    "category": "BS", 
+    "name": "MongoDB", 
+    "login_prompt": "Welcome to your DB Conservatory MongoDB server! \r\nType 'mongo' without the quotes and hit enter to connect to your database.", 
+    "image": "mongodb", 
+    "long_description": "<ul>\r\n<li><a href=\"http://www.mongodb.com/learn/nosql\" target=\"_blank\">NoSQL explained</a></li>\r\n<li><a href=\"http://docs.mongodb.org/manual/tutorial/getting-started/\" target=\"_blank\">Getting started with MongoDB</a></li>\r\n</ul>", 
+    "active": true, 
+    "short_description": "MongoDB (from \"humongous\") is an open-source document database, and the leading NoSQL database.", 
+    "order": 3, 
+    "db_command": "mongo athena.dbconservatory.com:", 
+    "ports": "22,27017"
+  }
+},
+{
+  "pk": 4, 
+  "model": "spinner.database", 
+  "fields": {
+    "category": "DS", 
+    "name": "CaBi", 
+    "login_prompt": "", 
+    "image": "bikeshare", 
+    "long_description": "", 
+    "active": true, 
+    "short_description": "Q4 2013 ride data from Capital Bikeshare, loaded into a MySQL database.", 
+    "order": 1, 
+    "db_command": "", 
+    "ports": "22,3306"
+  }
+}
+]

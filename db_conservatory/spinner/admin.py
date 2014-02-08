@@ -2,9 +2,8 @@ from django.contrib import admin
 from .models import Database, Container
 
 class DatabaseAdmin(admin.ModelAdmin):
-    list_display = ('name', 'category', 'slug', 'image', 'ports', 'order')
+    list_display = ('name', 'category', 'image', 'ports', 'order')
     list_filter = ('category',)
-    prepopulated_fields = {'slug': ('name',),}
 admin.site.register(Database, DatabaseAdmin)
 
 class ContainerAdmin(admin.ModelAdmin):

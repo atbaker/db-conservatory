@@ -94,6 +94,10 @@ student@{{ container.container_id|slice:":12" }}:~$</pre>
             <pre>ssh student@athena.dbconservatory.com -p {{ current_info.ssh_port }}</pre>
           </div>
         </div>
+
+        <h2>Need help getting started?</h2>
+        <p>DB Conservatory doesn't have any tutorial content (yet), but here are some of the best resources around the web for learning how to use your database:</p>
+        {{ container.database.long_description|safe }}
     </div>
 </section>
 {% endblock %}      

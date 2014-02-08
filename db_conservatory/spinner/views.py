@@ -12,7 +12,7 @@ import spindocker
 
 @login_required
 def create_container(request, database):
-    db = get_object_or_404(Database, slug=database)    
+    db = get_object_or_404(Database, image=database)    
     if request.user.is_authenticated():
         container = db.create_container(user=request.user)
     else:
@@ -47,7 +47,6 @@ class DatabaseList(ListView):
     def get_context_data(self, **kwargs):
         context = super(DatabaseList, self).get_context_data(**kwargs)
         context['datasets'] = Database.objects.filter(active=True, category='DS').order_by('order')
-        context['all_containers'] = len(spindocker.get('containers'))
         return context    
 
 class ContainerDetail(LoginRequiredMixin, DetailView):

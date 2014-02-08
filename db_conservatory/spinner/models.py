@@ -13,8 +13,8 @@ DATABASE_CATEGORY_CHOICES = (
 class Database(models.Model):
     name = models.CharField(max_length=255)
     category = models.CharField(max_length=2, choices=DATABASE_CATEGORY_CHOICES, default='BS')
-    slug = models.SlugField()
-    description = models.TextField(blank=True)
+    short_description = models.TextField(blank=True)
+    long_description = models.TextField(blank=True)
     image = models.CharField(max_length=255)
     order = models.IntegerField(null=True, blank=True)
     ports = models.CommaSeparatedIntegerField(max_length=50)
@@ -39,7 +39,7 @@ class Database(models.Model):
         return container
 
     def get_create_url(self):
-        return reverse('create', kwargs={'database': self.slug})
+        return reverse('create', kwargs={'database': self.image})
 
 class Container(models.Model):
     container_id = models.CharField(primary_key=True, unique=True, max_length=100)
