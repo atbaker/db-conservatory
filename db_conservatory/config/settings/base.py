@@ -84,7 +84,6 @@ TEMPLATE_DIRS = (
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
-SESSION_ENGINE = 'django.contrib.sessions.backends.file'
 SESSION_SAVE_EVERY_REQUEST = True
 
 # Internationalization
