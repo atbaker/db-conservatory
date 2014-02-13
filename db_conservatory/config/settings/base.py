@@ -62,6 +62,13 @@ DATABASES = {
     'default': dj_database_url.config()
 }
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-dbflake'
+    }
+}
+
 # Static asset configuration
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
@@ -77,6 +84,7 @@ TEMPLATE_DIRS = (
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.file'
 SESSION_SAVE_EVERY_REQUEST = True
 
 # Internationalization
