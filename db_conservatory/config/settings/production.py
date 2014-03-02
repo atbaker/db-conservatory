@@ -3,6 +3,8 @@ from .base import *
 
 PRODUCTION = True
 
+DEBUG = False
+
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 
 os.environ['MEMCACHE_SERVERS'] = os.environ.get('MEMCACHIER_SERVERS', '').replace(',', ';')
