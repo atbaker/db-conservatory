@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.conf import settings
+from django.views.decorators.cache import cache_page
 
 from django.contrib import admin
 
@@ -8,7 +9,7 @@ from profiles.views import UserCreate
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', DatabaseList.as_view(), name='home'),
+    url(r'^$', cache_page(60 * 15)(DatabaseList.as_view()), name='home'),
     url(r'^login$', 'django.contrib.auth.views.login', name='login'),
     url(r'^logout$', 'django.contrib.auth.views.logout', {'next_page': 'home'}, name='logout'),
     url(r'^databases/', include('spinner.urls')),
